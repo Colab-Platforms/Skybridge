@@ -1488,10 +1488,11 @@ textarea {
 }
 .se-d {
   color: #fff;
-  background-color: #001d17;
+  background-color: #001d17; 
+  
 }
 .se-l {
-  color: #001d17;
+  color: #001d17; 
   background-color: #eaeaea;
 }
 .sw-wrp > :nth-child(n + 2) {
@@ -1580,7 +1581,8 @@ body::-webkit-scrollbar-thumb {
   cursor: pointer;
 }
 body::-webkit-scrollbar-track {
-  background: #001d17;
+  /* background: #001d17; */
+  background: #216b5c;
 }
 .pin-spacer {
   pointer-events: none;
@@ -4718,4 +4720,11 @@ header {
 #timeline .tmln .tmln-pnt {
   -ms-flex-negative: 0;
   flex-shrink: 0;
+}
+
+
+.logo img {
+  width: 201px;
+  height: 50px;
+  object-fit: contain;
 }
