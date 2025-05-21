@@ -4721,3 +4721,55 @@ header {
   -ms-flex-negative: 0;
   flex-shrink: 0;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="c-lg">
+            <div class="hdr fl-st">
+              <h2 class="te-h2" data-sa="a-b">
+                You don’t have to take (<span class="fl-y thmbs">
+                  <img
+                    class="avtr r z-3"
+                    src="https://mmlventures.com/wp-content/uploads/2023/06/ted-mauze-chalkboard.jpg"
+                  />
+                  <img
+                    class="avtr r z-2"
+                    src="https://mmlventures.com/wp-content/uploads/2023/06/jason-shapiro-betcha.jpg"
+                  />
+                  <img
+                    class="avtr r z-1"
+                    src="https://mmlventures.com/wp-content/uploads/2023/06/florens-roell-parlayplay.jpg"
+                  />
+                  <img
+                    class="avtr r z-0 hi-m"
+                    src="https://mmlventures.com/wp-content/uploads/2023/06/adam-wexler-prizepicks.jpg"
+                  /> </span
+                >) word for it.
+              </h2>
+              <p class="dscr te-b2 ml-a tc-l84" data-sa="a-b">
+                We support startups throughout their journey, helping them rise as key players in the Gaming and Sports world.
+              </p>
+              <a
+                class="primary-btn fl-xy te-btn r oh prjs-btn"
+                href="/projects/"
+              >
+                <span class="brd si-awh"></span>
+                <span class="txt">Go to Portfolio</span>
+                <span class="bg-hvr a"></span>
+                <span class="txt-hvr a">Go to Portfolio</span>
+              </a>
+            </div>
+          </div>
