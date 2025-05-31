@@ -200,7 +200,8 @@ body {
   line-height: 1.44;
   font-weight: 400;
   letter-spacing: 0;
-  scrollbar-color: #bebbc6 #001d17;
+  scrollbar-color: #bebbc6 #001020;
+  background-color: #3c0a35; /* ✅ New dark blue background */
 }
 @media (max-width: 1200px) {
   body {
@@ -212,6 +213,8 @@ body {
     font-size: 16px;
   }
 }
+
+
 a {
   background-color: transparent;
   font: inherit;
@@ -454,6 +457,7 @@ textarea {
   line-height: 1.4;
   letter-spacing: 0.5px;
   text-transform: uppercase;
+  
 }
 @media (max-width: 1200px) {
   .te-b2 {
@@ -834,7 +838,7 @@ textarea {
   text-align: center;
 }
 .tc-gr {
-  color: #40b762;
+  color: #2efcff;
 }
 .tc-d84 {
   color: rgba(255, 255, 255, 0.84);
@@ -1039,7 +1043,7 @@ textarea {
   top: 0.69vw;
   width: 0.28vw;
   height: 0.28vw;
-  background-color: #40b762;
+  background-color: #70c8ff;
   border-radius: 50%;
 }
 @media (max-width: 1200px) {
@@ -1267,7 +1271,7 @@ textarea {
   margin-left: 0.28vw;
   padding: 0.21vw 0.56vw;
   border-radius: 0.56vw;
-  background-color: #40b762;
+  background-color: #70c8ff;
   color: #01271e;
 }
 @media (max-width: 1200px) {
@@ -1340,7 +1344,7 @@ textarea {
 }
 .prjc-logo .over svg circle,
 .prjc-logo .over svg path {
-  fill: #40b762;
+  fill: #70c8ff;
 }
 .-h .prjc-logo img,
 .-h .prjc-logo svg {
@@ -1360,7 +1364,7 @@ textarea {
 .gr-svg svg .dgr,
 .gr-svg svg .dgr circle,
 .gr-svg svg .dgr path {
-  fill: #01271e !important;
+  fill: #011f3d  !important;
 }
 .nav button {
   display: -webkit-inline-box;
@@ -1434,10 +1438,10 @@ textarea {
   color: rgba(255, 255, 255, 0.4);
 }
 .article-bg.-gr0 .explr svg {
-  color: #40b762;
+  color: #70c8ff;
 }
 .article-bg.-gr1 {
-  background-color: #40b762;
+  background-color: #70c8ff;
   color: #fff;
 }
 .article-bg.-gr1 .bg svg path {
@@ -1445,7 +1449,7 @@ textarea {
 }
 .article-bg.-gr1 .tag {
   background-color: #01271e;
-  color: #40b762;
+  color: #70c8ff;
 }
 .article-bg.-gr1 .explr {
   color: rgba(255, 255, 255, 0.64);
@@ -1458,7 +1462,7 @@ textarea {
   color: #01271e;
 }
 .article-bg.-gr2 .bg svg path {
-  stroke: #40b762;
+  stroke: #70c8ff;
 }
 .article-bg.-gr2 .tag {
   color: #fff;
@@ -1471,7 +1475,7 @@ textarea {
   color: #01271e;
 }
 .article-bg.-gr3 .bg svg path {
-  stroke: #40b762;
+  stroke: #70c8ff;
 }
 .article-bg.-gr3 .tag {
   color: #fff;
@@ -1488,11 +1492,11 @@ textarea {
 }
 .se-d {
   color: #fff;
-  background-color: #001d17; 
+  background-color: #001020; 
   
 }
 .se-l {
-  color: #001d17; 
+  color: #001020; 
   background-color: #eaeaea;
 }
 .sw-wrp > :nth-child(n + 2) {
@@ -1688,12 +1692,12 @@ body::-webkit-scrollbar-track {
   border-radius: inherit;
 }
 .primary-btn .brd {
-  border: 1.4px solid #40b762;
+  border: 1.4px solid #2efcff;
 }
 .primary-btn .bg-hvr {
   -webkit-transform: translateY(56%) scale(0);
   transform: translateY(56%) scale(0);
-  background-color: #40b762;
+  background-color: #2efcff;
   border-radius: 50%;
   width: 100%;
   height: 0;
@@ -1706,7 +1710,7 @@ body::-webkit-scrollbar-track {
   will-change: transform;
 }
 .primary-btn .txt-hvr {
-  color: #fff;
+  color: black;
   opacity: 0;
   -webkit-transition: opacity 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
   transition: opacity 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
@@ -1778,7 +1782,7 @@ body::-webkit-scrollbar-track {
 }
 .icon-btn .crcl {
   border-radius: 50%;
-  background-color: #02da3f;
+  background-color: #2efcff;
   -webkit-transition: 0.4s cubic-bezier(0.33, 0, 0.18, 1);
   transition: 0.4s cubic-bezier(0.33, 0, 0.18, 1);
 }
@@ -1823,14 +1827,14 @@ body::-webkit-scrollbar-track {
   background-color: rgba(0, 0, 0, 0);
 }
 .icon-btn.-brdr:hover .crcl {
-  border-color: #02da3f;
+  border-color: #2efcff;
 }
 .project-circle {
   width: 13.75vw;
   height: 13.75vw;
   border-radius: 50%;
-  background-color: #01271e;
-  color: #fff;
+  background-color: #2efcff;
+  color: black;
   will-change: transform;
   -webkit-transform: translateX(-110%);
   transform: translateX(-110%);
@@ -1915,7 +1919,7 @@ body::-webkit-scrollbar-track {
 }
 .project-card {
   padding: 1.67vw;
-  background-color: #01271e;
+  background-color: #001020;
 }
 @media (max-width: 1200px) {
   .project-circle.-gr p:nth-child(2) {
@@ -2013,7 +2017,7 @@ body::-webkit-scrollbar-track {
   content: "“";
 }
 .review-card .logo {
-  background-color: #01271e;
+  background-color: #001020;
   padding: 0.56vw;
 }
 @media (max-width: 1200px) {
@@ -2023,7 +2027,7 @@ body::-webkit-scrollbar-track {
 }
 .review-card .logo svg circle,
 .review-card .logo svg path {
-  fill: #40b762;
+  fill: #2efcff;
 }
 .review-card .logo:nth-child(2) {
   margin-left: -2.22vw;
@@ -2129,7 +2133,7 @@ body::-webkit-scrollbar-track {
 }
 .project-full-card {
   padding: 3.33vw;
-  background-color: #01271e;
+  background-color: #001020;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2369,7 +2373,7 @@ body::-webkit-scrollbar-track {
   }
 }
 .explore-card {
-  background-color: #01271e;
+  background-color: #001020;
 }
 .explore-card .cntnt {
   -webkit-box-orient: vertical;
@@ -2660,7 +2664,7 @@ header {
 @media (max-width: 1200px) {
   .main-hdr .apply-btn {
     padding-right: 39.6px;
-    background-color: #001d17;
+    background-color: #001020;
     min-width: auto;
   }
   .main-hdr .apply-btn .brd {
@@ -2745,7 +2749,7 @@ header {
   background-color: #0c0c0d;
 }
 .main-hdr.-gr1 .apply-btn .txt-hvr {
-  color: #40b762;
+  color: #70c8ff;
 }
 .main-hdr.-gr2,
 .main-hdr.-gr3 {
@@ -2767,7 +2771,7 @@ header {
 }
 .main-hdr.-gr2 .apply-btn .txt-hvr,
 .main-hdr.-gr3 .apply-btn .txt-hvr {
-  color: #40b762;
+  color: #70c8ff;
 }
 .main-hdr .layout.-l {
   background: rgba(255, 255, 255, 0.26);
@@ -2784,7 +2788,7 @@ header {
   background-color: #0c0c0d;
 }
 .main-hdr .layout.-l .apply-btn .txt-hvr {
-  color: #40b762;
+  color: #70c8ff;
 }
 .main-hdr .layout.-l .brgr-btn {
   background-color: #01271e;
@@ -2799,11 +2803,11 @@ header {
   background-color: rgba(0, 0, 0, 0);
 }
 .main-hdr.-gr0 .layout .apply-btn .brd {
-  border-color: #40b762;
+  border-color: #70c8ff;
   opacity: 1;
 }
 .main-hdr.-gr0 .layout .apply-btn .bg-hvr {
-  background-color: #40b762;
+  background-color: #70c8ff;
 }
 .main-hdr.-gr0 .layout .apply-btn .txt-hvr {
   color: #fff;
@@ -2904,10 +2908,10 @@ header {
   color: #fff;
 }
 #nav .inner.-d .apply-btn .brd {
-  border-color: #40b762;
+  border-color: #70c8ff;
 }
 #nav .inner.-d .apply-btn .bg-hvr {
-  background-color: #40b762;
+  background-color: #70c8ff;
 }
 #nav .inner.-d nav a.-a,
 #nav .inner.-d nav a:hover {
@@ -2926,7 +2930,7 @@ header {
   background-color: #0c0c0d;
 }
 #nav .inner.-l .apply-btn .txt-hvr {
-  color: #40b762;
+  color: #70c8ff;
 }
 #nav .inner.-l nav a.-a,
 #nav .inner.-l nav a:hover {
@@ -3016,7 +3020,7 @@ header {
 }
 #ftr footer .hdr .nav a.-a,
 #ftr footer .hdr .nav a:hover:not(.-a) {
-  color: #40b762;
+  color: #70c8ff;
 }
 #ftr footer .hdr .cnts {
   margin-left: 8.75vw;
@@ -3397,12 +3401,14 @@ header {
     margin-top: -264px;
   }
 }
+/* big circle colour*/
 #competencies .bg-crcl {
   width: 100vw;
   height: 100vw;
   border-radius: 50%;
-  background-color: #01271e;
+  background-color: #031426;
 }
+
 @media (max-width: 1200px) {
   #competencies .bg-crcl {
     width: 870px;
@@ -3427,7 +3433,7 @@ header {
 #competencies .crcl-bg {
   height: 50%;
   top: 0;
-  background-color: #001d17;
+  background-color: #001020;
 }
 #competencies .cntnt {
   text-align: center;
@@ -4540,7 +4546,7 @@ header {
 }
 #explore .cards .card {
   width: 10.07vw;
-  background-color: #01271e;
+  background-color: #001020;
 }
 #explore .cards .sldr {
   max-width: 53.89vw;
