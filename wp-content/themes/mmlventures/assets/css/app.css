@@ -1689,7 +1689,7 @@ body::-webkit-scrollbar-track {
   border-radius: inherit;
 }
 .primary-btn .brd {
-  border: 1.4px solid #2efcff;
+  border: solid #2efcff;
 }
 .primary-btn .bg-hvr {
   -webkit-transform: translateY(56%) scale(0);
@@ -2772,7 +2772,7 @@ header {
 }
 .main-hdr .layout.-l {
   background: #011f3d;
-  color: #0c0c0d;
+  /*color: #0c0c0d;*/
 }
 .main-hdr .layout.-l .apply-btn {
   background-color: rgba(0, 0, 0, 0);
@@ -2788,7 +2788,7 @@ header {
   color: #2efcff;
 }
 .main-hdr .layout.-l .brgr-btn {
-  background-color: white;
+  /*background-color: white;*/
 }
 .main-hdr.-gr0 {
   color: #2efcff;
@@ -3545,8 +3545,8 @@ header {
   margin-top: 3.33vw;
 }
 #reviews {
-  margin-top: 6.67vw;
-  /* margin-bottom: 9.72vw; */
+  margin-top: 16.67vw;
+  margin-bottom: 9.72vw;
 }
 @media (max-width: 1200px) {
   #reviews {
@@ -5046,7 +5046,7 @@ header {
             font-weight: 400;
             margin-bottom: 40px;
             color: #000000;
-            text-align: center;
+            text-align: left;
              padding-left: 50px;
         }
 
@@ -5111,7 +5111,7 @@ header {
             .sections-page {
                 display: grid;
                 grid-template-columns: 1fr 1fr;
-                grid-template-rows: 1fr 1fr;
+                grid-template-rows: 1.5fr 1fr;
                 gap: 40px;
             }
 
@@ -5220,3 +5220,68 @@ header {
     max-height: 1000px; /* Enough for full content */
     overflow: visible;
 }
+.privacy-section .te3-h1 {
+    color: white;
+    font-size: 150px;
+    font-weight: bold;
+    justify-content: center;
+    align-items: center;
+    padding-left: 450px;
+    padding-top: 50px;
+  }
+
+  .privacy-section .tc4-gr {
+    color: #2efcff;
+  }
+  .privacy-section .te4-h1 {
+    color: white;
+    font-size: 100px;
+    font-weight: bold;
+    justify-content: center;
+    align-items: center;
+    padding-left: 400px;
+    padding-top: 65px;
+  }
+
+  .privacy-section .tc1-gr {
+    color: #2efcff;
+  }
+  
+  
+  /* Mobile view */
+  @media (max-width: 768px) {
+    .privacy-section {
+      padding: 10px 15px;
+      padding-left:200;
+    }
+
+    .privacy-section .te3-h1 {
+      color: white;
+    font-size: 50px;
+    font-weight: bold;
+    justify-content: center;
+    align-items: center;
+    padding-left: 55px;
+    padding-top: 15px;
+    padding-inline-start: 20%;
+    }
+     .privacy-section .tc1-gr {
+    color: #2efcff;
+  }
+   .privacy-section .te4-h1 {
+      color: white;
+    font-size: 50px;
+    font-weight: bold;
+    justify-content: center;
+    align-items: center;
+    padding-left: 55px;
+    padding-top: 15px;
+    }
+     .privacy-section .tc4-gr {
+    color: #2efcff;
+  }
+
+  }
+
+
+
