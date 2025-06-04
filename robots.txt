@@ -1,0 +1,4 @@
+User-agent: *
+Disallow:
+
+Sitemap: https://skybridgeadvisory.com/sitemap.xml
