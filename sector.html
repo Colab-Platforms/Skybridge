@@ -17,11 +17,11 @@
 
 	
 	
-   <title>Our Sector | Skybridge Group</title>
+   <title>Sector | Skybridge Group</title>
   <meta name="description" content="Explore our advisory portfolio showcasing successful M&A deals, capital strategies, and business transformations.">
 
   <link rel="canonical" href="https://skybridgeadvisory.com/sector.html" />
-  <meta property="og:title" content="Our Sector - Sky Bridge Incap Advisory LLP" />
+  <meta property="og:title" content="Our Sector - SkyBridge Group" />
   <meta property="og:description" content="Browse key projects where we’ve delivered measurable impact in M&A and capital markets." />
   <meta property="og:image" content="https://skybridgeadvisory.com/images/og-sector.jpg" />
   <meta property="og:url" content="https://skybridgeadvisory.com/sector.html" />
@@ -323,7 +323,8 @@
 		<h1 class="te-h1">Empowering<br class="hi-sc" />
 <span class="tc-gr"> founders to</span> build the future today.</h1>
 	</div>
-</section><section id="projects-projects">
+</section>
+<section id="projects-projects">
 	<div class="c-lg">
 		<div class="hdr t-ce">
 			<h2 class="te-h1" data-sa="a-b" style="color: black;">
@@ -348,6 +349,8 @@
       <div class="sectors-bg-overlay"></div>
     </div>
   <div id="sectors-rows"></div>
+  <!-- Cut Option Button -->
+  <button id="cut-option-btn" style="display:none;z-index:1021;top:120px;right:40px;background:#ff5252;color:#fff;border:none;padding:10px 20px;border-radius:8px;cursor:pointer;font-size:1rem;box-shadow:0 2px 8px rgba(0,0,0,0.15);">Cut</button>
   <style>
   #info-panel-overlay {
     position: fixed;
@@ -360,8 +363,8 @@
   }
   #sector-info-panel {
     position: fixed;
-    top: 50%;
-    left: 50%;
+    top: 1013px;
+    left: 600.50px;
     transform: translate(-50%, -50%);
     z-index: 1010;
     background: #0e2747;
@@ -447,6 +450,7 @@
     #sector-info-panel .info-description { font-size: 0.98rem; }
   }
 </style>
+  </section>
 <div id="sector-info-panel" class="info-panel custom-info-panel">
   <button class="close-info-panel">&times;</button>
   <img class="info-image" style="display:none;" />
@@ -457,14 +461,7 @@
 </div>
 <div id="info-panel-overlay"></div>
 
-  <!-- Modal Popup Structure -->
-  <div id="sector-modal" class="sector-modal">
-    <div class="sector-modal-overlay"></div>
-    <div class="sector-modal-content">
-      <button class="sector-modal-close">&times;</button>
-      <div class="sector-modal-body"></div>
-    </div>
-  </div>
+
 </section>
   <script src="sectors.js"></script>
 	<script>const sectorData = [
@@ -577,6 +574,7 @@ renderRows();
 
 const infoPanel = document.getElementById('sector-info-panel');
 const closePanelBtn = document.querySelector('.close-info-panel');
+const cutOptionBtn = document.getElementById('cut-option-btn');
 const infoTitle = infoPanel.querySelector('.info-title');
 const infoCategory = infoPanel.querySelector('.info-category');
 const infoDesc = infoPanel.querySelector('.info-description');
@@ -590,7 +588,7 @@ rowsContainer.addEventListener('click', function(e) {
     if (sector) {
       infoTitle.textContent = sector.title;
       infoCategory.textContent = sector.category;
-      infoDesc.textContent = sector.description; // Show FULL info in the info panel, like the screenshot
+      infoDesc.textContent = sector.description;
       if (sector.image) {
         infoImage.src = sector.image;
         infoImage.style.display = 'block';
@@ -599,89 +597,138 @@ rowsContainer.addEventListener('click', function(e) {
       }
       infoVideo.innerHTML = `<video src="${sector.video}" autoplay loop muted playsinline style="width:100%;border-radius:6px;"></video>`;
       infoPanel.classList.add('open');
+      document.getElementById('info-panel-overlay').classList.add('open');
+      // Show the Cut button when modal is open
+      cutOptionBtn.style.display = 'block';
+      // Trigger popup animation
+      infoPanel.classList.remove('popup-animate');
+      void infoPanel.offsetWidth;
+      infoPanel.classList.add('popup-animate');
+      // Center modal over the card
+      let card = e.target.closest('.sector-box');
+      card.style.position = 'relative';
+      card.appendChild(infoPanel);
+      infoPanel.style.position = 'absolute';
+      infoPanel.style.left = '50%';
+      infoPanel.style.top = '50%';
+      infoPanel.style.transform = 'translate(-50%, -50%)';
+      infoPanel.style.zIndex = 10;
+
     }
   }
 });
-
+// Hide Cut button when modal closes
+function hideCutButton() {
+  cutOptionBtn.style.display = 'none';
+}
 closePanelBtn.onclick = function() {
   infoPanel.classList.remove('open');
+  document.getElementById('info-panel-overlay').classList.remove('open');
+  infoVideo.innerHTML = '';
+  hideCutButton();
+};
+window.addEventListener('keydown', function(event) {
+  if (event.key === 'Escape') {
+    infoPanel.classList.remove('open');
+    document.getElementById('info-panel-overlay').classList.remove('open');
+    infoVideo.innerHTML = '';
+    infoPanel.style.left = '';
+    infoPanel.style.top = '';
+    infoPanel.style.transform = '';
+    hideCutButton();
+  }
+});
+document.getElementById('info-panel-overlay').addEventListener('click', function() {
+  infoPanel.classList.remove('open');
+  this.classList.remove('open');
+  infoVideo.innerHTML = '';
+  infoPanel.style.left = '';
+  infoPanel.style.top = '';
+  infoPanel.style.transform = '';
+  hideCutButton();
+});
+// Cut Option Button Handler
+cutOptionBtn.onclick = function() {
+  alert('Cut option clicked! (Placeholder action)');
+};
+serviceCards.forEach(card => {
+  card.addEventListener('click', function(event) {
+    // ... (set content as before)
+    // Show modal to get correct size
+    servicePanel.style.display = 'flex';
+    // Wait for next frame to get correct size
+    setTimeout(() => {
+      const section = document.querySelector('.services-section12');
+      const sectionRect = section.getBoundingClientRect();
+      const scrollTop = window.scrollY || document.documentElement.scrollTop;
+      const scrollLeft = window.scrollX || document.documentElement.scrollLeft;
+      let panelWidth = servicePanel.offsetWidth || 320;
+      let panelHeight = servicePanel.offsetHeight || 200;
+      let left = sectionRect.left + scrollLeft + (sectionRect.width - panelWidth) / 2;
+      let top = sectionRect.top + scrollTop + (sectionRect.height - panelHeight) / 2;
+      servicePanel.style.left = left + 'px';
+      servicePanel.style.top = top + 'px';
+      servicePanel.style.transform = '';
+      servicePanel.classList.remove('dynamic-pos');
+      serviceOverlay.style.display = 'none';
+    }, 0);
+  });
+});
+closePanelBtn.onclick = function() {
+  infoPanel.classList.remove('open');
+  document.getElementById('info-panel-overlay').classList.remove('open');
   infoVideo.innerHTML = '';
 };
 window.addEventListener('keydown', function(event) {
   if (event.key === 'Escape') {
     infoPanel.classList.remove('open');
+    document.getElementById('info-panel-overlay').classList.remove('open');
     infoVideo.innerHTML = '';
+    infoPanel.style.left = '';
+    infoPanel.style.top = '';
+    infoPanel.style.transform = '';
   }
 });
-window.addEventListener('click', function(event) {
-  if (event.target === infoPanel) {
-    infoPanel.classList.remove('open');
-    infoVideo.innerHTML = '';
-  }
+document.getElementById('info-panel-overlay').addEventListener('click', function() {
+  infoPanel.classList.remove('open');
+  this.classList.remove('open');
+  infoVideo.innerHTML = '';
+  infoPanel.style.left = '';
+  infoPanel.style.top = '';
+  infoPanel.style.transform = '';
 });
 </script>
 				
 <div class="se-d r oh" id="ftr">
-        <section id="cta">
-          <div class="c-lg">
-            <div class="ce-in oc">  <!--rotating face -->
-              <img
-                class="sml hi-sc"
-                src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjgiIGhlaWdodD0iNjgiIHZpZXdCb3g9IjAgMCA2OCA2OCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KCTxwYXRoIGQ9Ik02NS42MDQ1IDM0LjIwNTRDNjUuNjA0NSAxNi44NjQ1IDUxLjU0NyAyLjgwNzAxIDM0LjIwNjEgMi44MDcwMUMxNi44NjUzIDIuODA3MDEgMi44MDc3NCAxNi44NjQ1IDIuODA3NzQgMzQuMjA1NEMyLjgwNzc0IDUxLjU0NjIgMTYuODY1MyA2NS42MDM4IDM0LjIwNjEgNjUuNjAzOEM1MS41NDcgNjUuNjAzOCA2NS42MDQ1IDUxLjU0NjIgNjUuNjA0NSAzNC4yMDU0Wk02Ny43MDA0IDM0LjIwNTRDNjcuNzAwNCA1Mi43MDM4IDUyLjcwNDUgNjcuNjk5NyAzNC4yMDYxIDY3LjY5OTdDMTUuNzA3OCA2Ny42OTk3IDAuNzExODYxIDUyLjcwMzggMC43MTE4NjEgMzQuMjA1NEMwLjcxMTg2MSAxNS43MDcgMTUuNzA3OCAwLjcxMTEyOCAzNC4yMDYxIDAuNzExMTI4QzUyLjcwNDUgMC43MTExMjggNjcuNzAwNCAxNS43MDcgNjcuNzAwNCAzNC4yMDU0WiIgZmlsbD0iIzQwQjc2MiIgc3Ryb2tlPSIjMDAxRDE3IiBzdHJva2Utd2lkdGg9IjAuNCIvPgoJPHBhdGggZD0iTTUxLjQ3NjUgMzUuNDUwN0M1MS40NzY1IDM2LjcxODYgNTAuNDQ4NiAzNy43NDY1IDQ5LjE4MDYgMzcuNzQ2NUM0Ny45MTI3IDM3Ljc0NjUgNDYuODg0OCAzNi43MTg2IDQ2Ljg4NDggMzUuNDUwN0M0Ni44ODQ4IDM0LjE4MjcgNDcuOTEyNyAzMy4xNTQ4IDQ5LjE4MDYgMzMuMTU0OEM1MC40NDg2IDMzLjE1NDggNTEuNDc2NSAzNC4xODI3IDUxLjQ3NjUgMzUuNDUwN1oiIGZpbGw9IiM0MEI3NjIiIHN0cm9rZT0iIzAwMUQxNyIgc3Ryb2tlLXdpZHRoPSIwLjQiLz4KCTxwYXRoIGQ9Ik0yMS41MjgzIDM3Ljk0NkMyMS41MjgzIDM5LjIxNCAyMC41MDA0IDQwLjI0MTkgMTkuMjMyNCA0MC4yNDE5QzE3Ljk2NDQgNDAuMjQxOSAxNi45MzY1IDM5LjIxNCAxNi45MzY1IDM3Ljk0NkMxNi45MzY1IDM2LjY3OCAxNy45NjQ0IDM1LjY1MDIgMTkuMjMyNCAzNS42NTAyQzIwLjUwMDQgMzUuNjUwMiAyMS41MjgzIDM2LjY3OCAyMS41MjgzIDM3Ljk0NloiIGZpbGw9IiM0MEI3NjIiIHN0cm9rZT0iIzAwMUQxNyIgc3Ryb2tlLXdpZHRoPSIwLjQiLz4KCTxwYXRoIGQ9Ik0zNi4yNzE4IDU0LjMxNEM0MS42ODcgNTMuODk4MSA0Ni43ODY0IDUxLjExOSA0OS41ODQgNDcuMzA4MkM0OS45MjY1IDQ2Ljg0MTYgNTAuNTgyNCA0Ni43NDExIDUxLjA0ODkgNDcuMDgzNkM1MS41MTU0IDQ3LjQyNjEgNTEuNjE2IDQ4LjA4MTkgNTEuMjczNSA0OC41NDg1QzQ4LjA4MSA1Mi44OTcgNDIuMzk4MiA1NS45NDU2IDM2LjQzMjMgNTYuNDAzN0MzMC40MDk2IDU2Ljg2NjIgMjMuOTY3OSA1NS4xMDcyIDE5LjU0MjUgNDguOTU2NkMxOS4yMDQ1IDQ4LjQ4NjkgMTkuMzExMyA0Ny44MzIgMTkuNzgxMSA0Ny40OTRDMjAuMjUwOSA0Ny4xNTYgMjAuOTA1NyA0Ny4yNjI4IDIxLjI0MzggNDcuNzMyNkMyNS4yMDUzIDUzLjIzODQgMzAuOTE0OCA1NC43MjU0IDM2LjI3MTggNTQuMzE0WiIgZmlsbD0iIzQwQjc2MiIgc3Ryb2tlPSIjMDAxRDE3IiBzdHJva2Utd2lkdGg9IjAuNCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+Cjwvc3ZnPgo="
-                 alt="Animated circular face icon representing Skybridge brand" loading="lazy" decoding="async" 
-              />
-            <h2 class="te-h10" data-sa="a-b">
-    Searching for someone to <span class="tc-gr">elevate your</span> business journey?
-  </h2>
-  <!-- rotating face -->   
-                <img
-                  class="sml hi-t"
-                  src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjgiIGhlaWdodD0iNjgiIHZpZXdCb3g9IjAgMCA2OCA2OCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KCTxwYXRoIGQ9Ik02NS42MDQ1IDM0LjIwNTRDNjUuNjA0NSAxNi44NjQ1IDUxLjU0NyAyLjgwNzAxIDM0LjIwNjEgMi44MDcwMUMxNi44NjUzIDIuODA3MDEgMi44MDc3NCAxNi44NjQ1IDIuODA3NzQgMzQuMjA1NEMyLjgwNzc0IDUxLjU0NjIgMTYuODY1MyA2NS42MDM4IDM0LjIwNjEgNjUuNjAzOEM1MS41NDcgNjUuNjAzOCA2NS42MDQ1IDUxLjU0NjIgNjUuNjA0NSAzNC4yMDU0Wk02Ny43MDA0IDM0LjIwNTRDNjcuNzAwNCA1Mi43MDM4IDUyLjcwNDUgNjcuNjk5NyAzNC4yMDYxIDY3LjY5OTdDMTUuNzA3OCA2Ny42OTk3IDAuNzExODYxIDUyLjcwMzggMC43MTE4NjEgMzQuMjA1NEMwLjcxMTg2MSAxNS43MDcgMTUuNzA3OCAwLjcxMTEyOCAzNC4yMDYxIDAuNzExMTI4QzUyLjcwNDUgMC43MTExMjggNjcuNzAwNCAxNS43MDcgNjcuNzAwNCAzNC4yMDU0WiIgZmlsbD0iIzQwQjc2MiIgc3Ryb2tlPSIjMDAxRDE3IiBzdHJva2Utd2lkdGg9IjAuNCIvPgoJPHBhdGggZD0iTTUxLjQ3NjUgMzUuNDUwN0M1MS40NzY1IDM2LjcxODYgNTAuNDQ4NiAzNy43NDY1IDQ5LjE4MDYgMzcuNzQ2NUM0Ny45MTI3IDM3Ljc0NjUgNDYuODg0OCAzNi43MTg2IDQ2Ljg4NDggMzUuNDUwN0M0Ni44ODQ4IDM0LjE4MjcgNDcuOTEyNyAzMy4xNTQ4IDQ5LjE4MDYgMzMuMTU0OEM1MC40NDg2IDMzLjE1NDggNTEuNDc2NSAzNC4xODI3IDUxLjQ3NjUgMzUuNDUwN1oiIGZpbGw9IiM0MEI3NjIiIHN0cm9rZT0iIzAwMUQxNyIgc3Ryb2tlLXdpZHRoPSIwLjQiLz4KCTxwYXRoIGQ9Ik0yMS41MjgzIDM3Ljk0NkMyMS41MjgzIDM5LjIxNCAyMC41MDA0IDQwLjI0MTkgMTkuMjMyNCA0MC4yNDE5QzE3Ljk2NDQgNDAuMjQxOSAxNi45MzY1IDM5LjIxNCAxNi45MzY1IDM3Ljk0NkMxNi45MzY1IDM2LjY3OCAxNy45NjQ0IDM1LjY1MDIgMTkuMjMyNCAzNS42NTAyQzIwLjUwMDQgMzUuNjUwMiAyMS41MjgzIDM2LjY3OCAyMS41MjgzIDM3Ljk0NloiIGZpbGw9IiM0MEI3NjIiIHN0cm9rZT0iIzAwMUQxNyIgc3Ryb2tlLXdpZHRoPSIwLjQiLz4KCTxwYXRoIGQ9Ik0zNi4yNzE4IDU0LjMxNEM0MS42ODcgNTMuODk4MSA0Ni43ODY0IDUxLjExOSA0OS41ODQgNDcuMzA4MkM0OS45MjY1IDQ2Ljg0MTYgNTAuNTgyNCA0Ni43NDExIDUxLjA0ODkgNDcuMDgzNkM1MS41MTU0IDQ3LjQyNjEgNTEuNjE2IDQ4LjA4MTkgNTEuMjczNSA0OC41NDg1QzQ4LjA4MSA1Mi44OTcgNDIuMzk4MiA1NS45NDU2IDM2LjQzMjMgNTYuNDAzN0MzMC40MDk2IDU2Ljg2NjIgMjMuOTY3OSA1NS4xMDcyIDE5LjU0MjUgNDguOTU2NkMxOS4yMDQ1IDQ4LjQ4NjkgMTkuMzExMyA0Ny44MzIgMTkuNzgxMSA0Ny40OTRDMjAuMjUwOSA0Ny4xNTYgMjAuOTA1NyA0Ny4yNjI4IDIxLjI0MzggNDcuNzMyNkMyNS4yMDUzIDUzLjIzODQgMzAuOTE0OCA1NC43MjU0IDM2LjI3MTggNTQuMzE0WiIgZmlsbD0iIzQwQjc2MiIgc3Ryb2tlPSIjMDAxRDE3IiBzdHJva2Utd2lkdGg9IjAuNCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+Cjwvc3ZnPgo="
-                alt="Animated circular face icon representing Skybridge brand" loading="lazy" decoding="async" 
-
-                />
-
-              <a
-                class="primary-btn fl-xy te-btn r oh pitch-btn"
-                href="/"
-              >
-                <span class="brd si-awh"></span>
-                <span class="txt">Contact Us</span>
-                <span class="bg-hvr a"></span>
-                <span class="txt-hvr a">Contact Us</span>
-              </a>
-              <p class="dscr te-b2 tc-d84" data-sa="a-b">
-                Submit your pitch and let’s explore ways to make your 
-                vision a reality.
-              </p>
-            </div>
-          </div>
-        </section>
-        <footer>
-      <div class="se-d r oh" id="ftr">
-	<section id="cta">
+       <section id="cta">
 		<div class="c-lg">
-			<div class="ce-in oc">    
-				<img class="sml hi-sc" src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjgiIGhlaWdodD0iNjgiIHZpZXdCb3g9IjAgMCA2OCA2OCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KCTxwYXRoIGQ9Ik02NS42MDQ1IDM0LjIwNTRDNjUuNjA0NSAxNi44NjQ1IDUxLjU0NyAyLjgwNzAxIDM0LjIwNjEgMi44MDcwMUMxNi44NjUzIDIuODA3MDEgMi44MDc3NCAxNi44NjQ1IDIuODA3NzQgMzQuMjA1NEMyLjgwNzc0IDUxLjU0NjIgMTYuODY1MyA2NS42MDM4IDM0LjIwNjEgNjUuNjAzOEM1MS41NDcgNjUuNjAzOCA2NS42MDQ1IDUxLjU0NjIgNjUuNjA0NSAzNC4yMDU0Wk02Ny43MDA0IDM0LjIwNTRDNjcuNzAwNCA1Mi43MDM4IDUyLjcwNDUgNjcuNjk5NyAzNC4yMDYxIDY3LjY5OTdDMTUuNzA3OCA2Ny42OTk3IDAuNzExODYxIDUyLjcwMzggMC43MTE4NjEgMzQuMjA1NEMwLjcxMTg2MSAxNS43MDcgMTUuNzA3OCAwLjcxMTEyOCAzNC4yMDYxIDAuNzExMTI4QzUyLjcwNDUgMC43MTExMjggNjcuNzAwNCAxNS43MDcgNjcuNzAwNCAzNC4yMDU0WiIgZmlsbD0iIzQwQjc2MiIgc3Ryb2tlPSIjMDAxRDE3IiBzdHJva2Utd2lkdGg9IjAuNCIvPgoJPHBhdGggZD0iTTUxLjQ3NjUgMzUuNDUwN0M1MS40NzY1IDM2LjcxODYgNTAuNDQ4NiAzNy43NDY1IDQ5LjE4MDYgMzcuNzQ2NUM0Ny45MTI3IDM3Ljc0NjUgNDYuODg0OCAzNi43MTg2IDQ2Ljg4NDggMzUuNDUwN0M0Ni44ODQ4IDM0LjE4MjcgNDcuOTEyNyAzMy4xNTQ4IDQ5LjE4MDYgMzMuMTU0OEM1MC40NDg2IDMzLjE1NDggNTEuNDc2NSAzNC4xODI3IDUxLjQ3NjUgMzUuNDUwN1oiIGZpbGw9IiM0MEI3NjIiIHN0cm9rZT0iIzAwMUQxNyIgc3Ryb2tlLXdpZHRoPSIwLjQiLz4KCTxwYXRoIGQ9Ik0yMS41MjgzIDM3Ljk0NkMyMS41MjgzIDM5LjIxNCAyMC41MDA0IDQwLjI0MTkgMTkuMjMyNCA0MC4yNDE5QzE3Ljk2NDQgNDAuMjQxOSAxNi45MzY1IDM5LjIxNCAxNi45MzY1IDM3Ljk0NkMxNi45MzY1IDM2LjY3OCAxNy45NjQ0IDM1LjY1MDIgMTkuMjMyNCAzNS42NTAyQzIwLjUwMDQgMzUuNjUwMiAyMS41MjgzIDM2LjY3OCAyMS41MjgzIDM3Ljk0NloiIGZpbGw9IiM0MEI3NjIiIHN0cm9rZT0iIzAwMUQxNyIgc3Ryb2tlLXdpZHRoPSIwLjQiLz4KCTxwYXRoIGQ9Ik0zNi4yNzE4IDU0LjMxNEM0MS42ODcgNTMuODk4MSA0Ni43ODY0IDUxLjExOSA0OS41ODQgNDcuMzA4MkM0OS45MjY1IDQ2Ljg0MTYgNTAuNTgyNCA0Ni43NDExIDUxLjA0ODkgNDcuMDgzNkM1MS41MTU0IDQ3LjQyNjEgNTEuNjE2IDQ4LjA4MTkgNTEuMjczNSA0OC41NDg1QzQ4LjA4MSA1Mi44OTcgNDIuMzk4MiA1NS45NDU2IDM2LjQzMjMgNTYuNDAzN0MzMC40MDk2IDU2Ljg2NjIgMjMuOTY3OSA1NS4xMDcyIDE5LjU0MjUgNDguOTU2NkMxOS4yMDQ1IDQ4LjQ4NjkgMTkuMzExMyA0Ny44MzIgMTkuNzgxMSA0Ny40OTRDMjAuMjUwOSA0Ny4xNTYgMjAuOTA1NyA0Ny4yNjI4IDIxLjI0MzggNDcuNzMyNkMyNS4yMDUzIDUzLjIzODQgMzAuOTE0OCA1NC43MjU0IDM2LjI3MTggNTQuMzE0WiIgZmlsbD0iIzQwQjc2MiIgc3Ryb2tlPSIjMDAxRDE3IiBzdHJva2Utd2lkdGg9IjAuNCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+Cjwvc3ZnPgo=" alt="Animated circular face icon representing Skybridge brand"
-loading="lazy" decoding="async" >
-			
+			<div class="ce-in oc">
+				<img class="sml hi-sc" src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjgiIGhlaWdodD0iNjgiIHZpZXdCb3g9IjAgMCA2OCA2OCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KCTxwYXRoIGQ9Ik02NS42MDQ1IDM0LjIwNTRDNjUuNjA0NSAxNi44NjQ1IDUxLjU0NyAyLjgwNzAxIDM0LjIwNjEgMi44MDcwMUMxNi44NjUzIDIuODA3MDEgMi44MDc3NCAxNi44NjQ1IDIuODA3NzQgMzQuMjA1NEMyLjgwNzc0IDUxLjU0NjIgMTYuODY1MyA2NS42MDM4IDM0LjIwNjEgNjUuNjAzOEM1MS41NDcgNjUuNjAzOCA2NS42MDQ1IDUxLjU0NjIgNjUuNjA0NSAzNC4yMDU0Wk02Ny43MDA0IDM0LjIwNTRDNjcuNzAwNCA1Mi43MDM4IDUyLjcwNDUgNjcuNjk5NyAzNC4yMDYxIDY3LjY5OTdDMTUuNzA3OCA2Ny42OTk3IDAuNzExODYxIDUyLjcwMzggMC43MTE4NjEgMzQuMjA1NEMwLjcxMTg2MSAxNS43MDcgMTUuNzA3OCAwLjcxMTEyOCAzNC4yMDYxIDAuNzExMTI4QzUyLjcwNDUgMC43MTExMjggNjcuNzAwNCAxNS43MDcgNjcuNzAwNCAzNC4yMDU0WiIgZmlsbD0iIzQwQjc2MiIgc3Ryb2tlPSIjMDAxRDE3IiBzdHJva2Utd2lkdGg9IjAuNCIvPgoJPHBhdGggZD0iTTUxLjQ3NjUgMzUuNDUwN0M1MS40NzY1IDM2LjcxODYgNTAuNDQ4NiAzNy43NDY1IDQ5LjE4MDYgMzcuNzQ2NUM0Ny45MTI3IDM3Ljc0NjUgNDYuODg0OCAzNi43MTg2IDQ2Ljg4NDggMzUuNDUwN0M0Ni44ODQ4IDM0LjE4MjcgNDcuOTEyNyAzMy4xNTQ4IDQ5LjE4MDYgMzMuMTU0OEM1MC40NDg2IDMzLjE1NDggNTEuNDc2NSAzNC4xODI3IDUxLjQ3NjUgMzUuNDUwN1oiIGZpbGw9IiM0MEI3NjIiIHN0cm9rZT0iIzAwMUQxNyIgc3Ryb2tlLXdpZHRoPSIwLjQiLz4KCTxwYXRoIGQ9Ik0yMS41MjgzIDM3Ljk0NkMyMS41MjgzIDM5LjIxNCAyMC41MDA0IDQwLjI0MTkgMTkuMjMyNCA0MC4yNDE5QzE3Ljk2NDQgNDAuMjQxOSAxNi45MzY1IDM5LjIxNCAxNi45MzY1IDM3Ljk0NkMxNi45MzY1IDM2LjY3OCAxNy45NjQ0IDM1LjY1MDIgMTkuMjMyNCAzNS42NTAyQzIwLjUwMDQgMzUuNjUwMiAyMS41MjgzIDM2LjY3OCAyMS41MjgzIDM3Ljk0NloiIGZpbGw9IiM0MEI3NjIiIHN0cm9rZT0iIzAwMUQxNyIgc3Ryb2tlLXdpZHRoPSIwLjQiLz4KCTxwYXRoIGQ9Ik0zNi4yNzE4IDU0LjMxNEM0MS42ODcgNTMuODk4MSA0Ni43ODY0IDUxLjExOSA0OS41ODQgNDcuMzA4MkM0OS45MjY1IDQ2Ljg0MTYgNTAuNTgyNCA0Ni43NDExIDUxLjA0ODkgNDcuMDgzNkM1MS41MTU0IDQ3LjQyNjEgNTEuNjE2IDQ4LjA4MTkgNTEuMjczNSA0OC41NDg1QzQ4LjA4MSA1Mi44OTcgNDIuMzk4MiA1NS45NDU2IDM2LjQzMjMgNTYuNDAzN0MzMC40MDk2IDU2Ljg2NjIgMjMuOTY3OSA1NS4xMDcyIDE5LjU0MjUgNDguOTU2NkMxOS4yMDQ1IDQ4LjQ4NjkgMTkuMzExMyA0Ny44MzIgMTkuNzgxMSA0Ny40OTRDMjAuMjUwOSA0Ny4xNTYgMjAuOTA1NyA0Ny4yNjI4IDIxLjI0MzggNDcuNzMyNkMyNS4yMDUzIDUzLjIzODQgMzAuOTE0OCA1NC43MjU0IDM2LjI3MTggNTQuMzE0WiIgZmlsbD0iIzQwQjc2MiIgc3Ryb2tlPSIjMDAxRDE3IiBzdHJva2Utd2lkdGg9IjAuNCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+Cjwvc3ZnPgo=">
+				<h2 class="te-h1" data-sa="a-b">Need a true partner to <span class="tc-gr"> help grow</span> your business?					<img class="sml hi-t"
+					     src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjgiIGhlaWdodD0iNjgiIHZpZXdCb3g9IjAgMCA2OCA2OCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KCTxwYXRoIGQ9Ik02NS42MDQ1IDM0LjIwNTRDNjUuNjA0NSAxNi44NjQ1IDUxLjU0NyAyLjgwNzAxIDM0LjIwNjEgMi44MDcwMUMxNi44NjUzIDIuODA3MDEgMi44MDc3NCAxNi44NjQ1IDIuODA3NzQgMzQuMjA1NEMyLjgwNzc0IDUxLjU0NjIgMTYuODY1MyA2NS42MDM4IDM0LjIwNjEgNjUuNjAzOEM1MS41NDcgNjUuNjAzOCA2NS42MDQ1IDUxLjU0NjIgNjUuNjA0NSAzNC4yMDU0Wk02Ny43MDA0IDM0LjIwNTRDNjcuNzAwNCA1Mi43MDM4IDUyLjcwNDUgNjcuNjk5NyAzNC4yMDYxIDY3LjY5OTdDMTUuNzA3OCA2Ny42OTk3IDAuNzExODYxIDUyLjcwMzggMC43MTE4NjEgMzQuMjA1NEMwLjcxMTg2MSAxNS43MDcgMTUuNzA3OCAwLjcxMTEyOCAzNC4yMDYxIDAuNzExMTI4QzUyLjcwNDUgMC43MTExMjggNjcuNzAwNCAxNS43MDcgNjcuNzAwNCAzNC4yMDU0WiIgZmlsbD0iIzQwQjc2MiIgc3Ryb2tlPSIjMDAxRDE3IiBzdHJva2Utd2lkdGg9IjAuNCIvPgoJPHBhdGggZD0iTTUxLjQ3NjUgMzUuNDUwN0M1MS40NzY1IDM2LjcxODYgNTAuNDQ4NiAzNy43NDY1IDQ5LjE4MDYgMzcuNzQ2NUM0Ny45MTI3IDM3Ljc0NjUgNDYuODg0OCAzNi43MTg2IDQ2Ljg4NDggMzUuNDUwN0M0Ni44ODQ4IDM0LjE4MjcgNDcuOTEyNyAzMy4xNTQ4IDQ5LjE4MDYgMzMuMTU0OEM1MC40NDg2IDMzLjE1NDggNTEuNDc2NSAzNC4xODI3IDUxLjQ3NjUgMzUuNDUwN1oiIGZpbGw9IiM0MEI3NjIiIHN0cm9rZT0iIzAwMUQxNyIgc3Ryb2tlLXdpZHRoPSIwLjQiLz4KCTxwYXRoIGQ9Ik0yMS41MjgzIDM3Ljk0NkMyMS41MjgzIDM5LjIxNCAyMC41MDA0IDQwLjI0MTkgMTkuMjMyNCA0MC4yNDE5QzE3Ljk2NDQgNDAuMjQxOSAxNi45MzY1IDM5LjIxNCAxNi45MzY1IDM3Ljk0NkMxNi45MzY1IDM2LjY3OCAxNy45NjQ0IDM1LjY1MDIgMTkuMjMyNCAzNS42NTAyQzIwLjUwMDQgMzUuNjUwMiAyMS41MjgzIDM2LjY3OCAyMS41MjgzIDM3Ljk0NloiIGZpbGw9IiM0MEI3NjIiIHN0cm9rZT0iIzAwMUQxNyIgc3Ryb2tlLXdpZHRoPSIwLjQiLz4KCTxwYXRoIGQ9Ik0zNi4yNzE4IDU0LjMxNEM0MS42ODcgNTMuODk4MSA0Ni43ODY0IDUxLjExOSA0OS41ODQgNDcuMzA4MkM0OS45MjY1IDQ2Ljg0MTYgNTAuNTgyNCA0Ni43NDExIDUxLjA0ODkgNDcuMDgzNkM1MS41MTU0IDQ3LjQyNjEgNTEuNjE2IDQ4LjA4MTkgNTEuMjczNSA0OC41NDg1QzQ4LjA4MSA1Mi44OTcgNDIuMzk4MiA1NS45NDU2IDM2LjQzMjMgNTYuNDAzN0MzMC40MDk2IDU2Ljg2NjIgMjMuOTY3OSA1NS4xMDcyIDE5LjU0MjUgNDguOTU2NkMxOS4yMDQ1IDQ4LjQ4NjkgMTkuMzExMyA0Ny44MzIgMTkuNzgxMSA0Ny40OTRDMjAuMjUwOSA0Ny4xNTYgMjAuOTA1NyA0Ny4yNjI4IDIxLjI0MzggNDcuNzMyNkMyNS4yMDUzIDUzLjIzODQgMzAuOTE0OCA1NC43MjU0IDM2LjI3MTggNTQuMzE0WiIgZmlsbD0iIzQwQjc2MiIgc3Ryb2tlPSIjMDAxRDE3IiBzdHJva2Utd2lkdGg9IjAuNCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+Cjwvc3ZnPgo=">
+				</h2>
+				<a class="primary-btn fl-xy te-btn r oh pitch-btn" href="/">	<span class="brd si-awh"></span>
+	<span class="txt">Contact Us</span>
+	<span class="bg-hvr a"></span>
+	<span class="txt-hvr a">Contact Us</span>
+</a>				<p class="dscr te-b2 tc-d84" data-sa="a-b">Pitch your idea to us today and find out how we can help make your goals reality.</p>
 			</div>
 		</div>
 	</section>
 	<footer>
 		<div class="c-lg">
 			<div class="hdr fl-st">
-				<div class="logo oc"> 
-  <img src="https://cdn.shopify.com/s/files/1/0636/5226/6115/files/Sky_Bridge.png?v=1747637674" alt="Logo" loading="lazy" decoding="async"  />
+				<div class="logo oc"> <!--Bottom Logo-->
+  <img src="https://cdn.shopify.com/s/files/1/0636/5226/6115/files/Sky_Bridge.png?v=1747637674" alt="Logo" />
 </div>
 				<div class="ri fl-st">
 					<div class="about-us">
 						<p class="te-b2 ttl hi-sc tc-d40 oc">About us</p>
-			 <nav class="nav te-h5 fl-st oc">
-                  <a href="index.html">Home</a>
-      <a href="sector.html">Sector</a>
-      <a href="about.html">About Us</a>
-                  </nav>
+						<nav class="nav te-h5 fl-st oc">
+															<a href="index.html">Home</a>
+															<a href="sector.html">Sectors</a>
+															<a href="about.html">About Us</a>
+													</nav>
 					</div>
 					<div class="cnts oc">
 						<p class="te-b2 ttl hi-sc tc-d40">Contacts</p>
@@ -698,22 +745,33 @@ Maharashtra - 400001</p>
 				</div>
 			</div>
 			<div class="ftr fl-y">
-				<p class="copy te-b2 oc">Ⓒ2025 Skybridge. <span class="tc-d40">all rights reserved</span></p>
+				<p class="copy te-b2 oc">Ⓒ2025 Skybridge  <span class="tc-d40">all rights reserved</span></p>
 				<div class="prvc-link oc">
-					<a href="./privacy.html" target="_self" rel="noopener">Privacy Policy</a>
+					 <a href="./privacy.html" target="_self" rel="noopener">Privacy Policy</a>
     <a href="./terms.html" target="_self" rel="noopener">Terms & Conditions</a>
 				</div>
 				<div class="scls fl-y te-b2 oc hi-t">
-	</div>				<div class="dsgn ml-a fl-e oc">
-				
-				</div>
+	
 			</div>
 		</div>
 	</footer>
 	<div class="lines si-aw">
 		<div class="sw-svg">
-			
-			<svg viewBox="0 0 375 622" fill="none" xmlns="http://www.w3.org/2000/svg">
+<svg viewBox="0 0 1440 820" fill="none" xmlns="http://www.w3.org/2000/svg">
+				<g transform="translate(0, 573)">
+					<path
+							d="M-722.783 113.08H1001.35C1028.56 113.08 1050.53 137.443 1050.53 167.607V336.409C1050.53 382.042 1097.97 407.372 1130.23 379.142L1561.35 0.932373"
+							stroke="url(#paint0_linear_128_4665)" stroke-width="2"></path>
+				</g>
+				<defs>
+					<linearGradient id="paint0_linear_128_4665" x1="1332.16" y1="125.429" x2="1707.53" y2="-637.382"
+					                gradientUnits="userSpaceOnUse">
+						<stop stop-color="#2efcff"></stop>
+						<stop offset="0.902401" stop-color="#2efcff" stop-opacity="0"></stop>
+					</linearGradient>
+				</defs>
+			</svg>
+				<svg viewBox="0 0 375 622" fill="none" xmlns="http://www.w3.org/2000/svg">
 				<g transform="translate(0, 428)">
 					<path opacity="0.9"
 					      d="M-633.768 58.3591H250.122C264.07 58.3591 275.335 70.8634 275.335 86.3449V172.982C275.335 196.402 299.655 209.403 316.195 194.914L537.212 0.799805"
@@ -733,97 +791,10 @@ Maharashtra - 400001</p>
 					</linearGradient>
 				</defs>
 			</svg>
-		</div>	
-	
+		</div>
+		
 		<div class="canvas si-awh"></div>
 	</div>
-</div>
-</div>
-		    <div class="lines si-aw">
-          <div class="sw-svg">
-            <svg
-              viewBox="0 0 1440 820"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <g transform="translate(0, 573)">
-                <path
-                  d="M-722.783 113.08H1001.35C1028.56 113.08 1050.53 137.443 1050.53 167.607V336.409C1050.53 382.042 1097.97 407.372 1130.23 379.142L1561.35 0.932373"
-                  stroke="url(#paint0_linear_128_4665)"
-                  stroke-width="2"
-                ></path>
-              </g>
-              <defs>
-                <linearGradient
-                  id="paint0_linear_128_4665"
-                  x1="1332.16"
-                  y1="125.429"
-                  x2="1707.53"
-                  y2="-637.382"
-                  gradientUnits="userSpaceOnUse"
-                >
-                  <stop stop-color="#2efcff"></stop>
-                  <stop
-                    offset="0.902401"
-                    stop-color="#2efcff"
-                    stop-opacity="0"
-                  ></stop>
-                </linearGradient>
-              </defs>
-            </svg>
-               <svg
-              viewBox="0 0 375 622"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <g transform="translate(0, 428)">
-                <path
-                  opacity="0.9"
-                  d="M-633.768 58.3591H250.122C264.07 58.3591 275.335 70.8634 275.335 86.3449V172.982C275.335 196.402 299.655 209.403 316.195 194.914L537.212 0.799805"
-                  stroke="url(#paint0_linear_190_3998)"
-                  stroke-width="1.4"
-                ></path>
-                <rect
-                  x="222"
-                  y="44"
-                  width="153"
-                  height="150"
-                  fill="url(#paint1_linear_190_3998)"
-                ></rect>
-              </g>
-              <defs>
-                <linearGradient
-                  id="paint0_linear_190_3998"
-                  x1="419.714"
-                  y1="64.697"
-                  x2="612.505"
-                  y2="-326.637"
-                  gradientUnits="userSpaceOnUse"
-                >
-                  <stop stop-color="#2efcff"></stop>
-                  <stop
-                    offset="0.902401"
-                    stop-color="#2efcff"
-                    stop-opacity="0"
-                  ></stop>
-                </linearGradient>
-                <linearGradient
-                  id="paint1_linear_190_3998"
-                  x1="273"
-                  y1="143.5"
-                  x2="316.994"
-                  y2="55.4969"
-                  gradientUnits="userSpaceOnUse"
-                >
-                  <stop stop-color="#011f3d"></stop>
-                  <stop offset="1" stop-color="#011f3d" stop-opacity="0"></stop>
-                </linearGradient>
-              </defs>
-            </svg>
-          </div>
- 
-          <div class="canvas si-awh"></div>
-        </div>				
 </div>
 </div><script type="speculationrules">
 {"prefetch":[{"source":"document","where":{"and":[{"href_matches":"\/*"},{"not":{"href_matches":["\/wp-*.php","\/wp-admin\/*","\/wp-content\/uploads\/*","\/wp-content\/*","\/wp-content\/plugins\/*","\/wp-content\/themes\/mmlventures\/*","\/*\\?(.+)"]}},{"not":{"selector_matches":"a[rel~=\"nofollow\"]"}},{"not":{"selector_matches":".no-prefetch, .no-prefetch a"}}]},"eagerness":"conservative"}]}
