@@ -5253,12 +5253,12 @@ header {
 }
 .privacy-section .te3-h1 {
     color: white;
-    font-size: 150px;
+    font-size: 120px;
     font-weight: bold;
     justify-content: center;
     align-items: center;
-    padding-left: 450px;
-    padding-top: 50px;
+    padding-left: 400px;
+    padding-top: 10px;
   }
 
   .privacy-section .tc4-gr {
@@ -5422,12 +5422,12 @@ header {
   left: 50%;
   transform: translate(-50%, -50%) scale(0.98);
   min-width: 340px;
-  max-width: 98vw;
-  width: 480px;
+  max-width: 100vw;
+  width: 650px;
   background: #011f3d;
   color: #333;
   border-radius: 18px;
-  box-shadow: 0 12px 64px #000c;
+ /* box-shadow: 0 12px 64px #000c;*/
   z-index: 9999;
   padding: 2.8rem 2.2rem 2.2rem 2.2rem;
   opacity: 0;
@@ -5577,7 +5577,7 @@ header {
   width: 98%;
   max-width: 540px;
   min-width: 320px;
-  min-height: 399px;
+  /*min-height: 399px;*/
   max-height: 456px;
   border-radius: 6px;
   margin: 0 auto 2.7rem auto;
@@ -5760,6 +5760,8 @@ header {
 
 #sector-info-panel.open {
   display: flex;
+  top:1013px;
+  left:600.50px;
 }
 
 .info-panel-content {
@@ -6173,7 +6175,7 @@ header {
                 padding-bottom: 18px;
                 min-height: 260px;
                   width: calc(50% - 19px);
-                  width: 100% !important;
+                  width: 100% ;
             }
             .service-img12 {
                 width: 100%;
@@ -6245,7 +6247,56 @@ header {
             }
         }
     
+.specialities-section {
+  padding: 40px 20px;
+  text-align: center;
+  background: #fff;
+}
 
+.specialities-section h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+.specialities-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.card {
+  background: #dfe3ea;
+  padding: 20px;
+  border-radius: 30% 0 30% 0;
+  text-align: center;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+  position: relative;
+}
+
+.card img {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 15px;
+}
+
+.card h3 {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #333;
+  min-height: 48px;
+}
+
+.card a {
+  margin-top: 10px;
+  display: inline-block;
+  color: #003478;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
 
 
 
