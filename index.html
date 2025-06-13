@@ -459,7 +459,7 @@
 /* ventures css */
 
 .container1 {
-    max-width: 1200px;
+    max-width: 1500px;
     margin: 0 auto;
     padding: 40px 20px;
 }
@@ -561,7 +561,7 @@
     min-width: 200px;
     padding-right: 20px;
     border-top: 1px solid #e5e5e5;
-    padding-top: 20px;
+    padding-top: 50px;
 }
 
 .insight.main-insight {
@@ -572,7 +572,7 @@
 }
 
 .category {
-    font-size: 22px;
+    font-size: 30px;
     font-weight: 600;
     color: #011f3d;
     text-transform: uppercase;
@@ -581,11 +581,12 @@
 }
 
 .title {
-    font-size: 24px;
+    font-size: 26px;
     font-weight: 700;
     color: #011f3d;
     margin-bottom: 12px;
     line-height: 1.2;
+    padding-top:20px;
 }
 
 .insight:not(.main-insight) .title {
@@ -595,8 +596,9 @@
 
 .description {
     color: #011f3dd6;
-    font-size: 16px;
+    font-size: 20px;
     line-height: 1.5;
+    padding-top:30px;
 }
 
 /* Navigation styles */
@@ -1992,6 +1994,392 @@
             </div>
           </div>
         </section>
+        <section>
+          <style>
+           .services-section13 {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 150px 5px 0px 10px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .services-title13 {
+      font-size: 3.1rem;
+      font-weight: bold;
+      margin-bottom: 10px;
+      text-align: center;
+      padding:30px;
+    }
+    .services-desc13 {
+      font-size: 2.3rem;
+      color: #011f3d;
+      margin-bottom: 30px;
+      text-align: center;
+      font-weight: 600;
+    }
+    .services-content13 {
+      display: flex;
+      gap: 350px;
+      width: 200%;
+      justify-content: center;
+      
+      padding-top:6vh;
+    }
+    .services-img13 {
+  flex: 1 1 420px;         /* Increased from 340px */
+  max-width: 550px; 
+  height:60vh;       /* Also increased */
+  min-width: 300px;        /* Optional: increase min-width if needed */
+  aspect-ratio: 1 / 1;     /* Keeps it square, you can remove or adjust */
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 32px rgba(0, 0, 0, 0.6);
+  background: #011f3d;
+  margin-right: 48px;
+}
+    /* Swapped section: cards left, image right */
+    .services-section13--reverse .services-content13 {
+      flex-direction: row-reverse;
+    }
+    .services-section13--reverse .services-img13 {
+      margin-right: 0;
+      margin-left: 48px;
+     
+    }
+    @media (max-width: 900px) {
+      .services-section13--reverse .services-content13 {
+        gap: 0px; /* Or any smaller value like 20px */
+    flex-direction: column; /* Optional: stack items vertically */
+      }
+      .services-section13--reverse .services-img13 {
+        margin-left: 0;
+      }
+    }
+    .services-img13 img {
+  flex: 1 1 420px;         /* Increased from 340px */
+  max-width: 600px; 
+  height:60vh;       /* Also increased */
+  min-width: 300px;        /* Optional: increase min-width if needed */
+  aspect-ratio: 1 / 1;     /* Keeps it square, you can remove or adjust */
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 32px rgba(0, 0, 0, 0.6);
+  background: #111;
+  margin-right: 48px;
+}
+
+    .services-cards13 {
+      flex: 2 1 480px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-gap: 64px 56px; /* Increased gap for more space between cards */
+      align-items: stretch;
+      min-width: 320px;
+      max-width: 540px;
+    
+    }
+    .service-card13 {
+        min-width: 320px;
+          max-width: 350px;
+      background: #011f3d;
+      color: #fff;
+      border-radius: 7px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 36px 10px 30px 10px;
+      font-size: 1.1rem;
+      font-weight: 500;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.13);
+      position: relative;
+      overflow: hidden;
+      opacity: 0;
+      transform: scale(0.6) rotateY(90deg);
+      clip-path: circle(0% at 50% 50%);
+      transition: opacity 0.5s, transform 0.7s cubic-bezier(.7,.2,.2,1), clip-path 0.7s cubic-bezier(.7,.2,.2,1);
+      cursor: pointer;
+      z-index: 1;
+      margin: 0 0 0 0; /* Reset, but can be adjusted if needed */
+    }
+    .service-card13 {
+      margin: 0px 0px 0px 0px;
+    }
+    .services-cards13 > .service-card13 {
+      margin: 0px 0px 0px 0px;
+    }
+    @media (max-width: 600px) {
+      .services-cards13 {
+        grid-gap: 24px 0px;
+      }
+    }
+    
+    .service-card13 .card-details {
+      display: none;
+      opacity: 0;
+      pointer-events: none;
+      margin-top: 18px;
+      font-size: 1rem;
+      text-align: center;
+      padding: 0 8px 8px 8px;
+    }
+    .service-card13.active {
+      z-index: 2;
+      background: #011f3d;
+      color: #fff;
+      transform: scale(1.1) rotateY(0deg) !important;
+      box-shadow: 0 6px 36px rgba(0,0,0,0.24);
+      transition: transform 0.5s cubic-bezier(.7,.2,.2,1), background 0.25s, color 0.25s;
+    }
+    .service-card13.active .card-details {
+      display: block;
+      opacity: 1;
+      pointer-events: auto;
+      animation: fadeInDetails 0.5s;
+    }
+    .service-card13.down {
+      opacity: 0.6;
+      transform: translateY(120px) scale(0.92) rotateY(20deg) !important;
+      filter: blur(1px);
+      pointer-events: none;
+      transition: transform 0.6s cubic-bezier(.7,.2,.2,1), opacity 0.5s, filter 0.5s;
+    }
+    @keyframes fadeInDetails {
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .service-card13.visible {
+      opacity: 1;
+      transform: scale(1) rotateY(0deg);
+      clip-path: circle(140% at 50% 50%);
+    }
+    .service-card13 svg {
+      width: 48px;
+      height: 48px;
+      margin-bottom: 14px;
+      stroke: #2efcff;
+      stroke-width: 2.2;
+      fill: none;
+      display: block;
+    }
+    @media (max-width: 900px) {
+      .services-content13 {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+      }
+      .services-img13, .services-cards13 {
+        max-width: 100%;
+      }
+    }
+    @media (max-width: 600px) {
+      .services-section13 {
+        /*adding: 18px 2vw 40px 2vw;*/
+padding-top:1px;
+      }
+        .services-img13 img {
+  flex: 1 1 420px;         /* Increased from 340px */
+  max-width: 600px; 
+  height:60vh;       /* Also increased */
+  min-width: 300px;        /* Optional: increase min-width if needed */
+  aspect-ratio: 1 / 1;     /* Keeps it square, you can remove or adjust */
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 32px rgba(0, 0, 0, 0.6);
+  background: #111;
+  margin-right: 48px;
+}
+      .services-cards13 {
+        grid-template-columns: 1fr;
+        min-width: 0;
+      }
+      .service-card13 {
+        padding: 28px 6px 22px 6px;
+      }
+    }
+    /* Animate image reveal */
+    .services-img13 {
+      flex: 1 1 420px;         /* Increased from 340px */
+  max-width: 550px; 
+  height:60vh;       /* Also increased */
+  min-width: 300px;        /* Optional: increase min-width if needed */
+  aspect-ratio: 1 / 1;     /* Keeps it square, you can remove or adjust */
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 32px rgba(0, 0, 0, 0.6);
+  background: #111;
+  margin-right: 48px;
+    }
+    .services-img13.visible {
+      opacity: 1;
+      transform: scale(1);
+      clip-path: circle(140% at 50% 50%);
+      height:55vh;
+      width:100px;
+    }
+  </style>
+  <section class="services-section13" id="8-services">
+    <div class="services-title13">OUR SERVICES</div>
+    <div class="services-desc13">Smart, scalable services crafted for today’s forward-thinkers.</div>
+    <div class="services-content13">
+      <div class="services-img13">
+  <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=600&q=80" alt="Modern business office discussion">
+</div>
+<div class="services-cards13">
+  <div class="service-card13" data-title="Growth Equity">
+    <!-- Finance/Investment Icon -->
+    <svg viewBox="0 0 48 48"><rect x="8" y="32" width="8" height="8"/><rect x="20" y="24" width="8" height="16"/><rect x="32" y="12" width="8" height="28"/><polyline points="8,32 24,16 40,12" fill="none" stroke="#2efcff" stroke-width="2.2"/></svg>
+    Growth Equity
+    <div class="card-details">
+      <h3>INVESTMENT</h3>
+      <p>Growth equity is a type of private investment, usually a minority investment, in relatively mature companies that are looking for capital to expand or restructure operations, enter new markets, or finance a significant acquisition without a change of control of the business. Growth equity investors provide not just capital, but also strategic guidance and operational support to help companies accelerate their growth.</p>
+   
+    </div>
+  </div>
+  <div class="service-card13" data-title="Buyouts & Joint Ventures">
+    <!-- Partnership Icon -->
+    <svg viewBox="0 0 48 48"><circle cx="16" cy="24" r="6"/><circle cx="32" cy="24" r="6"/><path d="M22 24h4" stroke="#2efcff" stroke-width="2.2"/><path d="M16 30v4h16v-4" stroke="#2efcff" stroke-width="2.2" fill="none"/></svg>
+    Buyouts & Joint Ventures
+    <div class="card-details">
+      <h3>Buyouts and Joint Ventures</h3>
+      <p>Buyouts and joint ventures involve acquiring a controlling interest in a company or forming a partnership to pursue specific business objectives. These strategies are used to unlock value, share risks, and combine resources for mutual benefit.</p>
+     
+    </div>
+  </div>
+  <div class="service-card13" data-title="Loan Syndication">
+    <!-- Loan/Bank Icon -->
+    <svg viewBox="0 0 48 48"><rect x="10" y="20" width="28" height="16" rx="3" stroke="#2efcff" stroke-width="2.2" fill="none"/><path d="M14 28h20" stroke="#2efcff" stroke-width="2.2"/><circle cx="24" cy="28" r="2" fill="#2efcff"/></svg>
+    Loan Syndication
+    <div class="card-details">
+      <h3>Loan Syndication</h3>
+      <p>Loan syndication is the process of involving several different lenders in providing various portions of a loan. This is typically done for large borrowers who require more capital than a single lender is willing or able to provide.</p>
+      
+    </div>
+  </div>
+  <div class="service-card13" data-title="Asset Management">
+    <!-- Portfolio/Management Icon -->
+    <svg viewBox="0 0 48 48"><rect x="8" y="16" width="32" height="20" rx="4" stroke="#2efcff" stroke-width="2.2" fill="none"/><rect x="16" y="8" width="16" height="8" rx="2" stroke="#2efcff" stroke-width="2.2" fill="none"/></svg>
+    Asset Management
+    <div class="card-details">
+      <h3>MANAGEMENT</h3>
+      <p>Asset management involves managing investments on behalf of clients to achieve specific financial objectives. This includes portfolio management, risk assessment, and strategic allocation of assets.</p>
+     
+    </div>
+  </div>
+</div>
+    </div>
+  </section>
+  <!-- New section with swapped layout -->
+  <section class="services-section13" id="barbershop-services-2" style="margin-top: 80px;">
+   
+    <div  class="services-content13">
+      <div class="services-cards13">
+        <div class="service-card13" data-title="Financial Advisory">
+          <!-- Advice/Consultation Icon -->
+          <svg viewBox="0 0 48 48"><rect x="8" y="12" width="32" height="20" rx="6" stroke="#2efcff" stroke-width="2.2" fill="none"/><path d="M16 32v4a4 4 0 0 0 4 4h8a4 4 0 0 0 4-4v-4" stroke="#2efcff" stroke-width="2.2" fill="none"/><circle cx="24" cy="22" r="3" fill="#2efcff"/></svg>
+          Financial Advisory
+          <div class="card-details">
+            <h3>ADVISORY</h3>
+            <p>Financial advisory services provide expert advice on financial planning, investment strategies, mergers and acquisitions, and other financial matters to help clients make informed decisions.</p>
+          </div>
+        </div>
+        <div class="service-card13" data-title="Corporate Finance">
+          <!-- Building/Finance Icon -->
+          <svg viewBox="0 0 48 48"><rect x="10" y="18" width="28" height="18" rx="3" stroke="#2efcff" stroke-width="2.2" fill="none"/><rect x="18" y="10" width="12" height="8" rx="2" stroke="#2efcff" stroke-width="2.2" fill="none"/><path d="M18 26h12" stroke="#2efcff" stroke-width="2.2"/></svg>
+          Corporate Finance
+          <div class="card-details">
+            <h3>FINANCE</h3>
+            <p>Corporate finance focuses on the financial activities of businesses, including capital raising, mergers and acquisitions, and financial strategy to maximize shareholder value.</p>
+          </div>
+        </div>
+        <div class="service-card13" data-title="Risk Assessment">
+          <!-- Shield Icon -->
+          <svg viewBox="0 0 48 48"><path d="M24 6l16 6v10c0 10-7.5 18-16 20C15.5 40 8 32 8 22V12z" stroke="#2efcff" stroke-width="2.2" fill="none"/><path d="M24 20v8" stroke="#2efcff" stroke-width="2.2"/><circle cx="24" cy="30" r="2" fill="#2efcff"/></svg>
+          Risk Assessment
+          <div class="card-details">
+            <h3>RISK ASSESSMENT</h3>
+          <p> Risk assessment involves identifying, analyzing, and evaluating risks to minimize the impact of unforeseen events on business operations and investments.</p>
+          </div>
+        </div>
+        <div class="service-card13" data-title="Wealth Planning">
+          <!-- Piggy Bank Icon -->
+          <svg viewBox="0 0 48 48"><ellipse cx="24" cy="28" rx="14" ry="9" stroke="#2efcff" stroke-width="2.2" fill="none"/><circle cx="18" cy="28" r="2" fill="#2efcff"/><rect x="20" y="18" width="8" height="5" rx="2" stroke="#2efcff" stroke-width="2.2" fill="none"/></svg>
+         Planning
+          <div class="card-details">
+            <h3>  Wealth Planning  </h3>
+            <p>Wealth planning helps individuals and families structure their finances to achieve long-term goals, including retirement, estate planning, and tax optimization.</p>
+          </div>
+        </div>
+      </div>
+      <div class="services-img13">
+        <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=600&q=80" alt="Business handshake in office">
+      </div>
+    </div>
+  </section>
+  <script>
+    // Intersection Observer for circular reveal (supports multiple sections)
+    document.addEventListener('DOMContentLoaded', function() {
+      document.querySelectorAll('.services-section13').forEach(section => {
+        const img = section.querySelector('.services-img13');
+        const cards = section.querySelectorAll('.service-card13');
+
+        function reveal() {
+          if (img) img.classList.add('visible');
+          cards.forEach((card, i) => {
+            setTimeout(() => card.classList.add('visible'), 180 + i * 120);
+          });
+        }
+
+        // Card click logic
+        cards.forEach(card => {
+          card.addEventListener('click', function(e) {
+            if (card.classList.contains('active')) {
+              card.classList.remove('active');
+              cards.forEach(c => c.classList.remove('down'));
+              return;
+            }
+            cards.forEach(c => {
+              if (c !== card) {
+                c.classList.remove('active');
+                c.classList.add('down');
+              } else {
+                c.classList.add('active');
+                c.classList.remove('down');
+              }
+            });
+          });
+        });
+
+        // Click outside to reset
+        document.addEventListener('click', function(e) {
+          if (!e.target.closest('.service-card13')) {
+            cards.forEach(c => {
+              c.classList.remove('active');
+              c.classList.remove('down');
+            });
+          }
+        });
+
+        // Use Intersection Observer to trigger reveal
+        const observer = new window.IntersectionObserver(
+          (entries, obs) => {
+            entries.forEach(entry => {
+              if (entry.isIntersecting) {
+                reveal();
+                obs.disconnect();
+              }
+            });
+          },
+          { threshold: 0.35 }
+        );
+        observer.observe(section);
+      });
+    });
+  </script>
+        </section>
+        <br></br>
+         <br></br>
         <section id="home-projects">
           <!--Ventures-->
            <div class="container1">
@@ -2064,7 +2452,8 @@
             </div>
         </div>
     </div>
-
+    <br></br>
+<br></br>
           <!--Ventures-->
           <div class="c-lg">
             <div class="hdr t-ce ce-in">
@@ -3252,150 +3641,6 @@
 
 
 
-  <!-- Specialities Section -->
-  <section class="specialities-section">
-    <h2>OUR SERVICES</h2>
-    <div class="specialities-grid">
-      <div class="speciality-card">
-        <div class="icon-wrapper card-image"><img src="images/pexels-harsh-kaushik-2152596722-32284385.jpg" alt=""></div>
-         <div class="card-subtitle">INVESTMENT</div>
-        <div class="card-title">Growth Equity</div>
-        <div class="learn-more" data-title="Growth Equity" data-desc="Growth equity is a type of private investment, usually a minority investment, in relatively mature companies that are looking for capital to expand or restructure operations, enter new markets, or finance a significant acquisition without a change of control of the business" data-img="images/pexels-harsh-kaushik-2152596722-32284385.jpg">Learn More</div>
-      </div>
-
-      <div class="speciality-card">
-        <div class="icon-wrapper"><img src="images/pexels-joshuamayo-6133958.jpg" alt=""></div>
-        <div class="card-subtitle">SERVICE CATEGORY</div>
-        <div class="card-title">Buyouts and Joint Ventures</div>
-        <div class="learn-more" data-title="Buyouts and Joint Ventures" data-desc="Buyouts and joint ventures involve acquiring a controlling interest in a company or forming a partnership to pursue specific business objectives. These strategies are used to unlock value, share risks, and combine resources for mutual benefit." data-img="images/pexels-joshuamayo-6133958.jpg">Learn More</div>
-      </div>
-       <div class="speciality-card">
-        <div class="icon-wrapper"><img src="images/businessman-pressing-shiny-button (2).jpg" alt=""></div>
-        <div class="card-subtitle">SERVICE CATEGORY</div>
-        <div class="card-title">Loan Syndication</div>
-        <div class="learn-more" data-title="Loan Syndication" data-desc="Loan syndication is the process of involving several different lenders in providing various portions of a loan. This is typically done for large borrowers who require more capital than a single lender is willing or able to provide." data-img="images/businessman-pressing-shiny-button (2).jpg">Learn More</div>
-      </div>
-       <div class="speciality-card">
-        <div class="icon-wrapper"><img src="images/crystal-globe-with-stock-information.jpg" alt=""></div>
-        <div class="card-subtitle">Management</div>
-        <div class="card-title">Asset Management</div>
-        <div class="learn-more" data-title="Asset Management " data-desc="Asset management involves managing investments on behalf of clients to achieve specific financial objectives. This includes portfolio management, risk assessment, and strategic allocation of assets." data-img="images/crystal-globe-with-stock-information.jpg">Learn More</div>
-      </div> <div class="speciality-card">
-        <div class="icon-wrapper"><img src="images/team-work-process-young-business-managers-crew-working-with-new-startup-project-labtop-wood-table-typing-keyboard-texting-message-analyze-graph-plans.jpg" alt=""></div>
-        <div class="card-subtitle">Advisory</div>
-        <div class="card-title">Financial Advisory</div>
-        <div class="learn-more" data-title="Financial Advisory" data-desc="Financial advisory services provide expert advice on financial planning, investment strategies, mergers and acquisitions, and other financial matters to help clients make informed decisions." data-img="images/team-work-process-young-business-managers-crew-working-with-new-startup-project-labtop-wood-table-typing-keyboard-texting-message-analyze-graph-plans.jpg">Learn More</div>
-      </div> <div class="speciality-card">
-        <div class="icon-wrapper"><img src="images/business-team-discussing-their-ideas-office.jpg" alt=""></div>
-        <div class="card-subtitle"> Planning</div>
-        <div class="card-title">Wealth Planning</div>
-        <div class="learn-more" data-title="Wealth Planning " data-desc="Wealth planning helps individuals and families structure their finances to achieve long-term goals, including retirement, estate planning, and tax optimization." data-img="images/business-team-discussing-their-ideas-office.jpg">Learn More</div>
-      </div> 
-      <div class="speciality-card">
-        <div class="icon-wrapper"><img src="images/rear-view-businessman-talking-phone.jpg" alt=""></div>
-        <div class="card-subtitle">Risk </div>
-        <div class="card-title">Risk Assessment</div>
-        <div class="learn-more" data-title="Risk Assessment " data-desc="Risk assessment involves identifying, analyzing, and evaluating risks to minimize the impact of unforeseen events on business operations and investments." data-img="images/rear-view-businessman-talking-phone.jpg">Learn More</div>
-      </div>
-      <div class="speciality-card">
-        <div class="icon-wrapper"><img src="images/business-people-shaking-hands-together.jpg" alt=""></div>
-      <div class="card-subtitle">Finance</div>
-        <div class="card-title">Corporate Finance</div>
-        <div class="learn-more" data-title="Corporate Finance " data-desc="Corporate finance focuses on the financial activities of businesses, including capital raising, mergers and acquisitions, and financial strategy to maximize shareholder value." data-img="images/business-people-shaking-hands-together.jpg">Learn More</div>
-      </div>
-
-    </div>
-
-    <!-- Modal Inside Section -->
-    <div class="modal" id="mainModal">
-      <div class="modal-content">
-        <button class="close-modal">&times;</button>
-        <h2 id="modalTitle">Modal Title</h2>
-        <div id="modalBody">This is the modal content.</div>
-        <img id="modalImage" src="" alt="Modal Image">
-      </div>
-    </div>
-  </section>
-
-<script>
-  const modal = document.getElementById('mainModal');
-  const modalTitle = document.getElementById('modalTitle');
-  const modalBody = document.getElementById('modalBody');
-  const modalImage = document.getElementById('modalImage');
-  const closeModal = document.querySelector('.close-modal');
-
-  const isMobile = () => window.innerWidth <= 577;
-
-  document.querySelectorAll('.learn-more').forEach(button => {
-    button.addEventListener('click', (e) => {
-      const card = button.closest('.speciality-card');
-      const title = card.querySelector('.card-title').textContent;
-      const subtitle = card.querySelector('.card-subtitle')?.textContent || '';
-      const imgSrc = card.querySelector('img').src;
-      const content = getModalContent(title); // Use your logic here
-
-      if (isMobile()) {
-        // Remove any existing inline modals
-        document.querySelectorAll('.inline-modal').forEach(el => el.remove());
-
-        const inline = document.createElement('div');
-        inline.className = 'inline-modal';
-        inline.innerHTML = `
-          <button class="close-inline">&times;</button>
-          <h2>${title}</h2>
-          <p>${content}</p>
-          <img src="${imgSrc}" alt="${title}" />
-        `;
-        card.appendChild(inline);
-
-        inline.querySelector('.close-inline').onclick = () => inline.remove();
-      } else {
-        // Show desktop modal
-        modalTitle.innerText = title;
-        modalBody.innerText = getModalContent(title);
-        modalImage.src = imgSrc;
-        modal.style.display = 'flex';
-      }
-    });
-  });
-
-  closeModal.addEventListener('click', () => {
-    modal.style.display = 'none';
-  });
-
-  function getModalContent(title) {
-    switch (title.trim()) {
-      case "Growth Equity":
-        return `Growth equity is a type of private investment, usually a minority investment, in relatively mature companies...`;
-      case "Loan Syndication":
-        return `Loan syndication is the process of involving several different lenders in providing various portions of a loan. This is typically done for large borrowers who require more capital than a single lender is willing or able to provide.`;
-      default:
-       case "Buyouts and Joint Ventures":
-         return' Buyouts and joint ventures involve acquiring a controlling interest in a company or forming a partnership to pursue specific business objectives. These strategies are used to unlock value, share risks, and combine resources for mutual benefit.';
-          case "Asset Management":
-             return 'Asset management involves managing investments on behalf of clients to achieve specific financial objectives. This includes portfolio management, risk assessment, and strategic allocation of assets.';
-          case "Corporate Finance":
-             return 'Corporate Finance " data-desc="Corporate finance focuses on the financial activities of businesses, including capital raising, mergers and acquisitions, and financial strategy to maximize shareholder value.';
-             case "Financial Advisory":
-              return 'Financial advisory services provide expert advice on financial planning, investment strategies, mergers and acquisitions, and other financial matters to help clients make informed decisions.';
-                case "Wealth Planning ":
-                return 'Wealth Planning " data-desc="Wealth planning helps individuals and families structure their finances to achieve long-term goals, including retirement, estate planning, and tax optimization.';
-                  case "Risk assessment ":
-               return 'Risk assessment involves identifying, analyzing, and evaluating risks to minimize the impact of unforeseen events on business operations and investments.';
-
-
-
-    }
-  }
-</script>
-
-
-  </section>
-      
-  
-
- 
-
  <section id="reviews">
           <div class="cards">
             <div class="track fl-st">
@@ -4424,11 +4669,11 @@
                 contentItem.appendChild(mainInsight);
 
                 // Add two more insights (the next two in sequence)
-                for (let j = 1; j <= 2; j++) {
+                /*for (let j = 1; j <= 2; j++) {
                     const nextIndex = (i + j) % totalSlides;
                     const additionalInsight = createInsightElement(insights[nextIndex], false);
                     contentItem.appendChild(additionalInsight);
-                }
+                }*/
 
                 contentSlider.appendChild(contentItem);
             }
