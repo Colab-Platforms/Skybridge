@@ -6,6 +6,8 @@
 	<meta name="viewport" content="width=375,initial-scale=1,shrink-to-fit=no, maximum-scale=1">
 	<meta name="format-detection" content="telephone=no">
 	<meta name="HandheldFriendly" content="true">
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 	<meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
 	<style>
 		img:is([sizes="auto" i], [sizes^="auto," i]) {
@@ -269,7 +271,1015 @@
 		<p class="te-b2 tc-d64" data-sa="ia-b">We are committed to investing in entrepreneurs on their journey towards growth, offering strategic, commercial, and technical expertise every step of the way.
 		</p>
 	</div>
-</section><section id="explore">
+</section>
+
+
+<!--Add section here all -->
+<section>
+  <style>
+    .citi-section {
+      max-width: 1300px;
+      margin: 100px 10px;
+      padding: 20px;
+      line-height: 1.8;
+      font-size: 1.8rem;
+      font-weight: 400;
+      padding-left:440px;
+   font-family: mml-title, sans-serif;
+    }
+     @media (max-width: 768px) {
+      .citi-section {
+        padding: 15px;
+        margin: 40px 10px;
+        font-size: 1rem;
+        font-family: mml-title, sans-serif;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .citi-section {
+        font-size: 1.5rem;
+        line-height: 1.5;
+        font-family: mml-title, sans-serif;
+      }
+    }
+  </style>
+  <div class="citi-section">
+    <p>
+      We live in an increasingly complex world. Companies these days are either born global or are going global at record speed.
+      Business and geopolitics are forging an entirely new dynamic and consumers now expect financial services to be a seamless
+      part of their digital lives. Citi is a bank that’s uniquely positioned for this moment. Through our vast global network and
+      our on-the-ground expertise, we can connect the dots, anticipate change and empathize the needs of our clients in ways that
+      other banks simply cannot.
+    </p>
+  </div>
+  </section>
+  <br></br>
+
+  <!--2nd section-->
+
+<section>
+    <style>
+    body {
+      font-family: mml-title, sans-serif;
+      margin: 0;
+      background: #fff;
+      color: #000;
+    }
+
+    .slider-container {
+      max-width: 1200px;
+      margin: 80px auto;
+      padding: 0 20px;
+    }
+
+    .slider-title {
+      font-weight: bold;
+      font-size: 2.5rem; /* Bigger heading */
+      color: #111d3f;
+      letter-spacing: 1px;
+      margin-bottom: 40px;
+      text-transform: uppercase;
+    }
+
+    .slider-wrapper {
+      display: flex;
+      overflow-x: scroll;
+      scroll-behavior: smooth;
+      gap: 30px;
+      scrollbar-width: none; /* Firefox */
+     -ms-overflow-style: none; /* IE 10+ */
+    }
+
+    .slider-wrapper::-webkit-scrollbar {
+      display: none; /* Chrome, Safari */
+    }
+
+    .slide {
+      flex: 0 0 100%;
+      box-sizing: border-box;
+      padding-right: 30px;
+      min-width: 300px;
+      border-right: 1px solid #e0e0e0;
+        border-right: 1px solid rgba(0, 0, 0, 0.1); 
+    }
+
+    .slide h2 {
+      margin: 0;
+      font-size: 2.5rem;
+      font-weight: bold;
+      color: #011f3d;
+    }
+
+    .slide h3 {
+      margin-top: 8px;
+      font-size: 1.5rem;
+      color: #011f3d;
+      font-weight: 600;
+    }
+
+    .slide.blue h2,
+    .slide.blue h3 {
+      color: green;
+    }
+
+    .slide.red h2,
+    .slide.red h3 {
+      color: brown;
+    }
+
+    .slide.orange h2,
+    .slide.orange h3 {
+      color: #ff7f00;
+    }
+
+    .slide p {
+      margin-top: 13px;
+      font-size: 20px;
+      color: #000;
+      line-height: 1.7;
+    }
+
+    .slider-controls {
+      display: flex;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    .slider-button {
+      background-color: #011f3d;
+      color: white;
+      border: none;
+      padding: 10px 14px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 1.4rem;
+    }
+
+    .slider-button:disabled {
+      background-color: #ccc;
+      cursor: not-allowed;
+    }
+
+    @media (min-width: 768px) {
+      .slide {
+        flex: 0 0 33.333%;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .slide h2 {
+        font-size: 2rem;
+      }
+
+      .slide h3 {
+        font-size: 1.2rem;
+      }
+
+      .slide p {
+        font-size: 1.5rem;
+      }
+
+      .slide {
+        padding-right: 15px;
+      }
+    }
+  </style>
+
+
+  <div class="slider-container">
+    <div class="slider-title">OUR GLOBAL IMPACT</div>
+    <div class="slider-wrapper" id="slider">
+      <div class="slide">
+        <h2>$1+ trillion</h2>
+        <h3>committed to ESG</h3>
+        <p>We believe in playing a leading role in solving increasingly interconnected societal challenges. We set goals and we hold ourselves accountable to reaching them.</p>
+      </div>
+      <div class="slide blue">
+        <h2>Nearly $5 trillion</h2>
+        <h3>financial flows</h3>
+        <p>Our global network allows us to move the equivalent of Germany’s GDP each day across borders, currencies and asset classes.</p>
+      </div>
+      <div class="slide">
+        <h2>19,000</h2>
+        <h3>institutional clients</h3>
+        <p>Our clients include 85% of Fortune 500 companies.</p>
+      </div>
+      <div class="slide red">
+        <h2>180+</h2>
+        <h3>countries where we operate</h3>
+        <p>With a presence in more than 180 countries, no other bank can deliver the same global experience.</p>
+      </div>
+      <div class="slide orange">
+        <h2>500+</h2>
+        <h3>global partners</h3>
+        <p>We collaborate with institutions, governments, and businesses to empower sustainable and innovative progress.</p>
+      </div>
+
+      <div class="slide blue">
+        <h2>300M+</h2>
+        <h3>daily transactions</h3>
+        <p>Our infrastructure supports real-time, secure transactions across industries and regions, every single day.</p>
+      </div>
+    </div>
+
+    <div class="slider-controls">
+      <button class="slider-button" onclick="scrollSlider(-1)">&#x276E;</button>
+      <button class="slider-button" onclick="scrollSlider(1)">&#x276F;</button>
+    </div>
+  </div>
+
+  <script>
+    const slider = document.getElementById('slider');
+    function scrollSlider(direction) {
+      const slideWidth = slider.querySelector('.slide').offsetWidth + 30;
+      slider.scrollLeft += direction * slideWidth;
+    }
+  </script>
+</section>
+
+<!--3rd Section-->
+<br></br>
+<section>
+  <style>
+    body {
+      margin: 0;
+      font-family: mml-title, sans-serif;
+      background: #fff;
+    }
+
+    .mission-box {
+      background-color: #0c1830;
+      max-width: 900px;
+      margin: 80px auto;
+      border-radius: 25px;
+      padding: 40px 40px 60px 40px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+      text-align: left;
+    }
+
+    .mission-box img {
+      display: block;
+      max-width: 700px;
+      width: 100%;
+      margin: 0 auto 40px auto;
+      border-radius: 10px;
+    }
+
+    .mission-box h2 {
+      color: #ffffff;
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+
+    .mission-box p {
+      color: #ffffff;
+      font-size: 1.1rem;
+      line-height: 1.7;
+      margin: 0;
+    }
+
+    @media (max-width: 768px) {
+      .mission-box {
+        padding: 30px 20px 50px 20px;
+        margin: 40px 15px;
+      }
+
+      .mission-box img {
+        max-width: 100%;
+        margin-bottom: 30px;
+      }
+
+      .mission-box h2 {
+        font-size: 1.5rem;
+      }
+
+      .mission-box p {
+        font-size: 1rem;
+      }
+    }
+     .learn-more-btn {
+      display: inline-block;
+      padding: 12px 24px;
+      background-color: #ffffff;
+      color: #0c1830;
+      font-size: 1rem;
+      font-weight: bold;
+      text-decoration: none;
+      border-radius: 6px;
+      transition: all 0.3s ease;
+      padding-top:10px;
+    }
+
+    .learn-more-btn:hover {
+      background-color: #dfe3ee;
+      color: #000;
+    }
+
+  
+
+  </style>
+
+  <div class="mission-box">
+    <img src="https://images.pexels.com/photos/356056/pexels-photo-356056.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Our Mission" />
+    <h2>Our Mission</h2>
+    <p>
+      Citi's mission is to serve as a trusted partner to our clients by responsibly providing
+      financial services that enable growth and economic progress. We have set expectations
+      for how we must act to bring our mission to life. These expectations are at the heart of
+      our Leadership Principles – we take ownership, we deliver with pride and we succeed together.
+    </p>
+    <br></br>
+    <br></br>
+      <a href="#more-details" class="learn-more-btn">Learn More</a>
+  </div>
+</section>
+
+<!--4th Section-->
+<section>
+   <style>
+    body {
+      margin: 0;
+      font-family: mml-title, sans-serif;
+      background: #edf5f9;
+      padding: 40px 20px;
+    }
+
+    h2.section-title {
+      text-align: center;
+      font-size: 2.2rem;
+      color: #011f3d;
+      margin-bottom: 40px;
+      font-weight: 600;
+    }
+
+    .card-wrapper {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .row {
+      display: flex;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+
+    .row.one-card .card {
+      flex: 1;
+    }
+
+    .row.two-cards .card {
+      flex: 1;
+      min-width: 280px;
+    }
+
+.card {
+  background: #fff;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08);
+  opacity: 0;
+  transform: scale(0.95) translateY(40px);
+  transition: all 0.6s ease, transform 0.4s ease;
+  cursor: pointer;
+}
+
+.card:hover {
+  transform: scale(1.03) translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+
+    .card img {
+      width: 100%;
+      height: 260px;
+      object-fit: cover;
+    }
+
+    .card-body {
+      padding: 25px 20px;
+    }
+      .card-body {
+    padding: 25px 20px;
+    transition: background-color 0.4s ease, color 0.4s ease;
+  }
+
+  .card-body h3,
+  .card-body p {
+    transition: color 0.4s ease;
+  }
+
+  .learn-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    border: 2px solid #011f3d;
+    color: #011f3d;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    background-color: transparent;
+  }
+
+  /* Only apply hover when user hovers on the .card */
+  .card:hover .card-body {
+    background-color: #011f3d;
+  }
+
+  .card:hover .card-body h3,
+  .card:hover .card-body p {
+    color: #2efcff;
+  }
+
+  .card:hover .card-body .learn-btn {
+    background-color: #2efcff;
+    color: #011f3d;
+    border-color: #2efcff;
+  }
+
+    .card-body h3 {
+      margin: 0 0 10px;
+      font-size: 1.6rem;
+      color: #011f3d;
+    }
+
+    .card-body p {
+      color: #011f3d;
+      font-size: 1rem;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    .learn-btn {
+      display: inline-block;
+      padding: 10px 20px;
+      border: 2px solid #011f3d;
+      color: #011f3d;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+    }
+
+    .learn-btn:hover {
+      background: #011f3d;
+      color: #fff;
+    }
+
+    .card.appear {
+      opacity: 1;
+      transform: scale(1) translateY(0);
+    }
+
+    @media (max-width: 768px) {
+      .row {
+        flex-direction: column;
+      }
+
+      .card img {
+        height: 220px;
+      }
+    }
+  </style>
+
+  <h2 class="section-title">In This Section</h2>
+ 
+  <div class="card-wrapper">
+
+    <!-- Row 1: Single Full Width Card -->
+    
+<div class="row two-cards">
+       <div class="card" style="transition-delay: 0.2s;">
+        <img src="images/green energy.jpg" alt="Strategy">
+        <div class="card-body">
+          <h3>Strategy</h3>
+          <p>We are transforming Citi into a modern, simpler, more efficient bank.</p>
+          <a href="#" class="learn-btn">Learn More</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="images/rear-view-businessman-talking-phone.jpg" alt="Leadership">
+    <div class="card-body">
+          <h3>Leadership</h3>
+          <p>Our diverse leadership team is committed to stewarding a firm known for excellence.</p>
+          <a href="#" class="learn-btn">Learn More</a>
+        </div>
+      </div>
+    </div>
+    <!-- Row 2: Two Cards Side-by-Side -->
+    <div class="row two-cards">
+      <div class="card" style="transition-delay: 0.2s;">
+        <img src="images/wellness image (1).jpg" alt="Strategy">
+        <div class="card-body">
+          <h3>Strategy</h3>
+          <p>We are transforming Citi into a modern, simpler, more efficient bank.</p>
+          <a href="#" class="learn-btn">Learn More</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="images/pexels-harsh-kaushik-2152596722-32284385.jpg" alt="Leadership">
+          <div class="card-body">
+          <h3>Leadership</h3>
+          <p>Our diverse leadership team is committed to stewarding a firm known for excellence.</p>
+          <a href="#" class="learn-btn">Learn More</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+
+  <script>
+    const cards = document.querySelectorAll('.card');
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('appear');
+        }
+      });
+    }, {
+      threshold: 0.2
+    });
+
+    cards.forEach(card => {
+      observer.observe(card);
+    });
+  </script>
+
+</section>
+<br></br>
+<br></br>
+
+<section>
+  <title>Our Businesses</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: mml-title, sans-serif;
+      background-color: #f9f9f9;
+    }
+
+    .section-wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 40px;
+      padding: 40px 20px;
+    }
+
+    .info-card {
+      display: flex;
+      max-width: 1200px;
+      height:50vh;
+      background-color: white;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      transition: transform 0.7s ease, box-shadow 0.7s ease;
+      
+    }
+    .info-card.reverse {
+  flex-direction: row-reverse;
+}
+
+
+    .info-card:hover {
+      transform: scale(1.02);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .info-text {
+      flex: 1;
+      background-color: #011f3d;
+      color: #2efcff;
+      padding: 60px;
+    }
+
+    .info-text h2 {
+      margin-top: 0;
+      font-size:30px;
+    }
+
+    .info-text p {
+      font-size: 16px;
+      line-height: 1.8;
+    }
+
+    .info-text button {
+      margin-top: 15px;
+      padding: 8px 16px;
+      border: 1px solid #2efcff;
+      background: transparent;
+      color: white;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    .info-image {
+      flex: 1;
+    }
+
+    .info-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    @media (max-width: 768px) {
+      .info-card {
+        flex-direction: column;
+      }
+
+      .info-image img {
+        height: 250px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="section-wrapper">
+
+    <!-- Card 1 -->
+    <div class="info-card">
+      <div class="info-text">
+        <h2>Our Businesses</h2>
+        <br></br>
+        <p>Though our five businesses, we have the experience and capabilities to meet the banking needs of our clients and customers as they grow across borders and adapt to the digital age.</p>
+        <button>Read More</button>
+      </div>
+      <div class="info-image">
+        <img src="images/sports tech.jpg" alt="Business People">
+      </div>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="info-card reverse">
+      <div class="info-text">
+        <h2>Global Strategy</h2>
+          <br></br>
+        <p>We connect global opportunities with local expertise to deliver innovative solutions in today's fast-paced business environment.</p>
+        <button>Read More</button>
+      </div>
+      <div class="info-image">
+        <img src="https://www.citigroup.com/rcs/v1/siteIds/citigpa/asset/67fd4c25dbbcaf067987eb1d.jpg" alt="Strategy">
+      </div>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="info-card reverse">
+      <div class="info-text">
+        <h2>Client Success</h2>
+          <br></br>
+        <p>Partnering with clients to drive growth, manage risks, and embrace innovation in a constantly changing marketplace.</p>
+        <button>Read More</button>
+      </div>
+      <div class="info-image">
+        <img src="https://www.citigroup.com/rcs/v1/siteIds/citigpa/asset/63acb69f9bf1d21809b0e8c2.jpg" alt="Client Success">
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!--5th section -->
+<section>
+    <style>
+    body {
+      margin: 10px;
+      padding: 0;
+font-family: mml-title, sans-serif;
+      background: #ffffff;
+    }
+
+    .slider-container {
+      padding-left: 80px;
+      /*padding-right: 20px;*/
+      padding-top: 100px;
+      max-width:1200px;
+    }
+
+    .swiper {
+      padding-bottom: 40px;
+    }
+    .swiper-wrapper {
+      padding-right: 0; /* remove extra space */
+    }
+
+    .swiper-slide {
+       width: calc((100% - 80px) / 3); /* three slides, minus gap */
+      background: #f0f4f8;
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+      height:60vh;
+    }
+     .news-content:hover .news-title {
+    text-decoration: underline;
+    color: #2efcff;
+  }
+
+    .news-card {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+
+    .news-image {
+      width: 150%;
+      height: 300px;
+      object-fit: cover;
+    }
+
+    .news-content {
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+
+    .news-title {
+      font-size: 25px;
+      padding-top:30px;
+      font-weight: bold;
+      margin-bottom: 10px;
+      color: #011f3d;
+    }
+
+    .news-date {
+      font-size: 14px;
+      color: #555;
+      margin-top: auto;
+    }
+
+    .swiper-buttons {
+      display: flex;
+     /* justify-content: center;*/
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    .swiper-button-custom {
+      background-color: #e6eef5;
+      border: 1px solid #c2d6ea;
+      border-radius: 8px;
+      padding: 8px 14px;
+      cursor: pointer;
+      font-size: 16px;
+      font-weight: bold;
+      color: #011f3d;
+    }
+
+     @media (max-width: 900px) {
+      .swiper-slide {
+        width: calc((100% - 40px) / 2); /* 2 cards on medium screen */
+      }
+    }
+   
+
+
+   @media (max-width: 767px) {
+  .slider-container {
+    padding: 60px 0 0 0;
+    margin: 0 auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    
+  }
+
+  .swiper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+       .news-content:hover .news-title {
+    text-decoration: underline;
+    color: #2efcff;
+  }
+
+
+  .swiper-wrapper {
+    display: flex;
+    justify-content: center;
+  }
+
+  .swiper-slide {
+    /*max-width: 90%;*/
+    margin: 0 auto;
+  }
+
+  .news-image {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+  }
+
+  .swiper-buttons {
+    justify-content: center;
+  }
+}
+@media (max-width: 500px) {
+  body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+  }
+
+  .slider-container {
+    padding: 60px 0 0 0;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .swiper {
+    width: 100%;
+    overflow: visible;
+  }
+
+  .swiper-wrapper {
+    justify-content: center;
+    height:60vh;
+  }
+
+  .swiper-slide {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .news-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+  .info-text p {
+    font-size: 12px;
+    line-height: 1.7;
+}
+    .info-image img {
+        height: 450px;
+    }
+     .news-title {
+      font-size: 25px;
+      padding-top:30px;
+      font-weight: bold;
+      margin-bottom: 10px;
+      color: #011f3d;
+    }
+
+        
+  }
+
+
+
+  </style>
+
+
+  <div class="slider-container">
+    <div class="swiper mySwiper">
+      <div class="swiper-wrapper">
+        <!-- Slide 1 -->
+        <div class="swiper-slide">
+          <div class="news-card">
+            <img class="news-image" src="https://thumbs.dreamstime.com/b/businessman-using-tablet-laptop-analyzing-sales-data-economic-growth-graph-chart-business-strategy-digital-marketing-154742021.jpg" alt="News Image">
+            <div class="news-content">
+              <div class="news-title">
+                Citi Head of Banking and Executive Vice Chair Vis Raghavan to Present
+              </div>
+              <div class="news-date">May 28, 2025</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="swiper-slide">
+          <div class="news-card">
+            <img class="news-image" src="https://img.freepik.com/free-photo/group-diverse-people-having-business-meeting_53876-25060.jpg?semt=ais_hybrid&w=740" alt="News Image">
+            <div class="news-content">
+              <div class="news-title">
+                Citi CEO Jane Fraser to Present at the Bernstein 41st Annual Strategic Conference
+              </div>
+              <div class="news-date">May 22, 2025</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="swiper-slide">
+          <div class="news-card">
+            <img class="news-image" src="https://images.pexels.com/photos/3184416/pexels-photo-3184416.jpeg?auto=compress&cs=tinysrgb&w=600" alt="News Image">
+            <div class="news-content">
+              <div class="news-title">
+                Citi Appoints Wyatt Crowell as Head of North America Commercial Bank
+              </div>
+              <div class="news-date">May 14, 2025</div>
+            </div>
+          </div>
+        </div>
+         <!-- Slide 4 -->
+        <div class="swiper-slide">
+          <div class="news-card">
+            <img class="news-image" src="https://images.pexels.com/photos/590041/pexels-photo-590041.jpeg?auto=compress&cs=tinysrgb&w=600" alt="News Image">
+            <div class="news-content">
+              <div class="news-title">
+                Citi Appoints Wyatt Crowell as Head of North America Commercial Bank
+              </div>
+              <div class="news-date">May 14, 2025</div>
+            </div>
+          </div>
+        </div>
+         <!-- Slide 5 -->
+        <div class="swiper-slide">
+          <div class="news-card">
+            <img class="news-image" src="https://media.istockphoto.com/id/810529310/photo/presenting-some-of-her-top-ideas-to-the-team.jpg?b=1&s=612x612&w=0&k=20&c=LdWUyZoIDJMBJ1Ektyuh_3oJ_IemAoYWVCPCzVeq77I=" alt="News Image">
+            <div class="news-content">
+              <div class="news-title">
+                Citi Appoints Wyatt Crowell as Head of North America Commercial Bank
+              </div>
+              <div class="news-date">May 14, 2025</div>
+            </div>
+          </div>
+        </div>
+         <!-- Slide 6 -->
+        <div class="swiper-slide">
+          <div class="news-card">
+            <img class="news-image" src="https://images.pexels.com/photos/27406/pexels-photo-27406.jpg?auto=compress&cs=tinysrgb&w=600" alt="News Image">
+            <div class="news-content">
+              <div class="news-title">
+                Citi Appoints Wyatt Crowell as Head of North America Commercial Bank
+              </div>
+              <div class="news-date">May 14, 2025</div>
+            </div>
+          </div>
+        </div>
+         <!-- Slide 7 -->
+          <div class="swiper-slide">
+          <div class="news-card">
+            <img class="news-image" src="https://media.istockphoto.com/id/1351571961/photo/looking-directly-up-at-the-skyline-of-the-financial-district-in-central-london.jpg?b=1&s=612x612&w=0&k=20&c=VujnNwEzZy7Gxc2WxIEoPm-CUi8qdYqbJa0IRWRIDgA=" alt="News Image">
+            <div class="news-content">
+              <div class="news-title">
+                Citi Appoints Wyatt Crowell as Head of North America Commercial Bank
+              </div>
+              <div class="news-date">May 14, 2025</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Custom Buttons -->
+    <div class="swiper-buttons">
+      <button class="swiper-button-custom" id="prevBtn">&lt;</button>
+      <button class="swiper-button-custom" id="nextBtn">&gt;</button>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script>
+  const swiper = new Swiper('.mySwiper', {
+  slidesPerView: 1,
+  spaceBetween: 20,
+  navigation: false,
+  loop: false,
+  breakpoints: {
+    0: {
+      slidesPerView: 1,
+       // 👈 mobile
+    },
+    768: {
+      slidesPerView: 2, // 👈 tablet
+    },
+    1024: {
+      slidesPerView: 3, // 👈 desktop
+    }
+  }
+});
+  // Navigation Buttons
+  document.getElementById('prevBtn').addEventListener('click', () => {
+    swiper.slidePrev();
+  });
+
+  document.getElementById('nextBtn').addEventListener('click', () => {
+    swiper.slideNext();
+  });
+</script>
+</section>
+
+
+
+
+
+
+<!--End the all added section-->
+<section id="explore">
 	<div class="c-lg">
 		<h2 class="te-h2 t-ce ce-ma" data-sa="a-b">Explore our vision for investing</h2>
 	</div>
@@ -679,109 +1689,7 @@ to create significant value.</p>
 	</div>
 </section>
 <div class="se-d">
-	<section id="timeline">
-		<div class="c-lg">
-			<h2 class="te-h2 t-ce" data-sa="a-b">Our timeline</h2>
-		</div>
-		<div class="tmln fl-st">
-							<div class="tmln-pnt r" data-mc="12">
-					<div class="sqr article-bg -gr0 se-d"></div>
-					<p class="time a te-b3 tc-d40">February<br>2016</p>
-					<div class="line a"></div>
-					<div class="txt a">
-						<h3 class="te-lg">Mount Media Limited</h3>
-											</div>
-				</div>
-							<div class="tmln-pnt r" data-mc="4">
-					<div class="sqr article-bg -gr1 se-l"></div>
-					<p class="time a te-b3 tc-d40">March<br>2018</p>
-					<div class="line a"></div>
-					<div class="txt a">
-						<h3 class="te-lg">Lucky 7 Ventures</h3>
-											</div>
-				</div>
-							<div class="tmln-pnt r" data-mc="09">
-					<div class="sqr article-bg -gr2 se-l"></div>
-					<p class="time a te-b3 tc-d40">September<br>2018</p>
-					<div class="line a"></div>
-					<div class="txt a">
-						<h3 class="te-lg">Rushplay AB</h3>
-											</div>
-				</div>
-							<div class="tmln-pnt r" data-mc="10">
-					<div class="sqr article-bg -gr3 se-l"></div>
-					<p class="time a te-b3 tc-d40">October<br>2019</p>
-					<div class="line a"></div>
-					<div class="txt a">
-						<h3 class="te-lg">Megalotto</h3>
-											</div>
-				</div>
-							<div class="tmln-pnt r" data-mc="12">
-					<div class="sqr article-bg -gr1 se-l"></div>
-					<p class="time a te-b3 tc-d40">December<br>2020</p>
-					<div class="line a"></div>
-					<div class="txt a">
-						<h3 class="te-lg">Viker Limited</h3>
-											</div>
-				</div>
-							<div class="tmln-pnt r" data-mc="4">
-					<div class="sqr article-bg -gr0 se-d"></div>
-					<p class="time a te-b3 tc-d40">January<br>2021</p>
-					<div class="line a"></div>
-					<div class="txt a">
-						<h3 class="te-lg">Razorbill</h3>
-											</div>
-				</div>
-							<div class="tmln-pnt r" data-mc="4">
-					<div class="sqr article-bg -gr2 se-l"></div>
-					<p class="time a te-b3 tc-d40">April<br>2021</p>
-					<div class="line a"></div>
-					<div class="txt a">
-						<h3 class="te-lg">Capex</h3>
-											</div>
-				</div>
-							<div class="tmln-pnt r" data-mc="07">
-					<div class="sqr article-bg -gr3 se-l"></div>
-					<p class="time a te-b3 tc-d40">July<br>2021</p>
-					<div class="line a"></div>
-					<div class="txt a">
-						<h3 class="te-lg">Betcha</h3>
-											</div>
-				</div>
-							<div class="tmln-pnt r" data-mc="09">
-					<div class="sqr article-bg -gr1 se-l"></div>
-					<p class="time a te-b3 tc-d40">September<br>2021</p>
-					<div class="line a"></div>
-					<div class="txt a">
-						<h3 class="te-lg">Prize Picks</h3>
-											</div>
-				</div>
-							<div class="tmln-pnt r" data-mc="4">
-					<div class="sqr article-bg -gr2 se-l"></div>
-					<p class="time a te-b3 tc-d40">January<br>2022</p>
-					<div class="line a"></div>
-					<div class="txt a">
-						<h3 class="te-lg">Fliff Inc</h3>
-											</div>
-				</div>
-							<div class="tmln-pnt r" data-mc="07">
-					<div class="sqr article-bg -gr3 se-l"></div>
-					<p class="time a te-b3 tc-d40">July<br>2022</p>
-					<div class="line a"></div>
-					<div class="txt a">
-						<h3 class="te-lg">Parlay Play Inc</h3>
-											</div>
-				</div>
-							<div class="tmln-pnt r" data-mc="11">
-					<div class="sqr article-bg -gr0 se-d"></div>
-					<p class="time a te-b3 tc-d40">November<br>2022</p>
-					<div class="line a"></div>
-					<div class="txt a">
-						<h3 class="te-lg">Ballislife Inc</h3>
-											</div>
-				</div>
-					</div>
-	</section>
+	
 </div></main>
 <div class="se-d r oh" id="ftr">
 	<section id="cta">
