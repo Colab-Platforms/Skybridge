@@ -2168,7 +2168,30 @@
         flex-direction: column;
         align-items: center;
         gap: 30px;
+        padding-top:10px;
       }
+      .services-title13 {
+    font-size: 2.1rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-align: center;
+    padding: 30px;
+}
+.services-desc13 {
+    font-size: 2.3rem;
+    color: #011f3d;
+    margin-bottom: 30px;
+    text-align: center;
+    font-weight: 600;
+}
+        .services-img13 {
+    flex: 1 1 100%;
+    max-width: 100%;
+    aspect-ratio: unset; /* Optional: allow dynamic height */
+    margin-right: 0;
+    margin-bottom: 20px; /* Optional: spacing below image */
+  }
+      
       .services-img13, .services-cards13 {
         max-width: 100%;
       }
@@ -2179,17 +2202,59 @@
 padding-top:1px;
       }
         .services-img13 img {
-  flex: 1 1 420px;         /* Increased from 340px */
-  max-width: 600px; 
-  height:60vh;       /* Also increased */
-  min-width: 300px;        /* Optional: increase min-width if needed */
-  aspect-ratio: 1 / 1;     /* Keeps it square, you can remove or adjust */
+          flex: 1 1 100%;
+  max-width: 100%;
+  min-width: 500px;
+  height: 60vh; /* or any height you prefer */
   border-radius: 10px;
   overflow: hidden;
   box-shadow: 0 4px 32px rgba(0, 0, 0, 0.6);
   background: #111;
   margin-right: 48px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+.services-img13 {
+  flex: 1 1 100%;
+  max-width: 100%;
+  min-width: 600px;
+  height: 60vh; /* or any height you prefer */
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 32px rgba(0, 0, 0, 0.6);
+  background: #111;
+  margin-right: 48px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+        
+
+@media (max-width: 768px) {
+  .services-img13 {
+    flex: 1 1 100%;
+    max-width: 100%;
+    aspect-ratio: unset; /* Optional: allow dynamic height */
+    margin-right: 0;
+    margin-bottom: 20px; /* Optional: spacing below image */
+  }
+  .services-img13 {
+  flex: 1 1 100%;
+  max-width: 100%;
+  min-width: 300px;
+  height: 60vh; /* or any height you prefer */
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 32px rgba(0, 0, 0, 0.6);
+  background: #111;
+  margin-right: 48px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+}
+
       .services-cards13 {
         grid-template-columns: 1fr;
         min-width: 0;
