@@ -599,442 +599,320 @@
 
 <!--4th Section-->
 <section>
-   <style>
-    body {
-      margin: 0;
-      font-family: mml-title, sans-serif;
-      background: #edf5f9;
-      padding: 0px 20px;
-    }
-
-    h2.section-title {
+<section style="padding: 60px 20px; background: #011f3d; ">
+  <style>
+    .section-title {
       text-align: center;
-      font-size: 2.2rem;
-      color: #011f3d;
+      font-size: 2.4rem;
       margin-bottom: 40px;
-      font-weight: 600;
-    }
-
-    .card-wrapper {
-      display: flex;
-      flex-direction: column;
-      gap: 30px;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    .row {
-      display: flex;
-      gap: 30px;
-      flex-wrap: wrap;
-    }
-
-    .row.one-card .card {
-      flex: 1;
-    }
-
-    .row.two-cards .card {
-      flex: 1;
-      min-width: 280px;
-    }
-
-    .card {
-      background: #fff;
-      border-radius: 20px;
-      overflow: hidden;
-      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08);
-      opacity: 0;
-      transform: scale(0.95) translateY(40px);
-      transition: all 0.6s ease, transform 0.4s ease;
-      cursor: pointer;
-    }
-
-    .card:hover {
-      transform: scale(1.03) translateY(-10px);
-      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
-    }
-
-    .card img {
-      width: 100%;
-      height: 260px;
-      object-fit: cover;
-    }
-
-    .card-body {
-      padding: 25px 20px;
-      transition: background-color 0.4s ease, color 0.4s ease;
-    }
-
-    .card-body h3,
-    .card-body p {
-      transition: color 0.4s ease;
-    }
-
-    .learn-btn {
-      display: inline-block;
-      padding: 10px 20px;
-      border: 2px solid #011f3d;
-      color: #011f3d;
-      text-decoration: none;
-      font-weight: bold;
-      border-radius: 8px;
-      transition: all 0.3s ease;
-      background-color: transparent;
-    }
-
-    .card:hover .card-body {
-      background-color: #011f3d;
-    }
-
-    .card:hover .card-body h3,
-    .card:hover .card-body p {
       color: #2efcff;
-    }
-
-    .card:hover .card-body .learn-btn {
-      background-color: #2efcff;
-      color: #011f3d;
-      border-color: #2efcff;
-    }
-
-    .card-body h3 {
-      margin: 0 0 10px;
-      font-size: 1.6rem;
-      color: #011f3d;
-    }
-
-    .card-body p {
-      color: #011f3d;
-      font-size: 1rem;
-      line-height: 1.6;
-      margin-bottom: 20px;
-    }
-
-    .learn-btn:hover {
-      background: #011f3d;
-      color: #fff;
-    }
-
-    .card.appear {
-      opacity: 1;
-      transform: scale(1) translateY(0);
-    }
-
-    .section-with-modal {
-      position: relative;
-      background: #fff;
-      padding: 0;
-      border-radius: 10px;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    .modal {
-      display: none;
-    position: absolute;
-    inset: 0;
-    z-index: 993;
-    justify-content: center;
-    /* align-items: end; */
-    padding-right: 40px;
-    padding-bottom: 1px;
-    padding-top: 4000px;
-}
-
-    .modal-content {
-         background-color: #fff;
-    padding: 20px;
-    border-radius: 12px;
-    width: 1000%;
-    /* max-width: 2000px; */
-    position: relative;
-    animation: fadeIn 0.3s ease;
-    padding-left: 40p;
-    margin-left: 190px;
-    text-align: justify;
-}
-
-    .modal-content img {
-      width: 100%;
-      max-height: 300px;
-      object-fit: cover;
-      border-radius: 8px;
-      margin-bottom: 20px;
-    }
-
-    .close-modal {
-      position: absolute;
-      top: 10px;
-      right: 20px;
-      font-size: 26px;
       font-weight: bold;
-      color: black;
+    }
+
+    .accordion-container {
+      max-width: 1100px;
+      margin: auto;
+      border-radius: 12px;
+    }
+
+    .accordion-item {
+      background: #2efcff;
+      border-radius: 12px;
+      margin-bottom: 20px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.07);
+      overflow: hidden;
+      transition: all 0.3s ease;
+    }
+
+    .accordion-header {
+      padding: 20px 30px;
       cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: #fff;
     }
 
-    .modal h3 {
-      margin-top: 0;
-      font-weight: bold;
+    .accordion-header h3 {
+      font-size: 1.3rem;
       color: #011f3d;
-    }   
+      font-weight: bold;
+      margin: 0;
+    }
 
-    .modal p {
+    .accordion-header .icon {
+      font-size: 1.4rem;
+      color: #011f3d;
+      transition: transform 0.3s ease;
+    }
+
+    .accordion-body {
+      display: none;
+      padding: 30px;
+      background: white;
+    }
+
+    .accordion-body img {
+      width: 100%;
+      max-height: 280px;
+      object-fit: cover;
+      border-radius: 10px;
+      margin-bottom: 40px;
+    }
+
+    .accordion-body h4 {
+      font-size: 1.2rem;
+      color: #011f3d;
+      margin-bottom: 10px;
+      font-weight:bold;
+    }
+
+    .accordion-body p {
       color: #011f3d;
       line-height: 1.6;
-      padding-top:20px;
     }
 
-  
-     @media (max-width: 768px) {
-    .modal {
-      position: absolute;
-      background: transparent;
-      height: auto;
-      padding: 0;
-      justify-content: flex-start;
-      align-items: flex-start;
+    .accordion-item.active .accordion-body {
+      display: block;
     }
 
-    .modal-content {
-      margin: 10px 15px;
-      width: 100%;
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-      text-align: justify;
+    .accordion-item.active .icon {
+      transform: rotate(180deg);
     }
-  }
   </style>
 
-  <h2 class="section-title">In This Section</h2>
+  <h2 class="section-title">Who We Are & What We Offer</h2>
 
-  <div class="section-with-modal">
+  <div class="accordion-container">
 
-    <div class="card-wrapper">
-      <div class="row two-cards">
-        <div class="card" style="transition-delay: 0.2s;">
-          <img src="https://img.freepik.com/free-vector/company-employees-sharing-thoughts-ideas_74855-5469.jpg?uid=R203323317&ga=GA1.1.2056408330.1749463556&semt=ais_hybrid&w=740" alt="How We Do?">
-          <div class="card-body">
-            <h3>How We Do?</h3>
-            <p>At SKY Bridge Incap Advisory LLP, we are committed to delivering exceptional .......</p>
-            <a href="#" class="learn-btn" data-title="How We Do?" data-text="At SKY Bridge Incap Advisory LLP, we deliver exceptional outcomes through a client-focused and structured approach. We begin by understanding your goals and challenges to ensure our strategies align with your vision. Leveraging deep industry expertise and data-driven insights, we craft tailored solutions, applying innovation and advanced technology to solve complex issues and identify opportunities. We prioritize precise execution in managing transactions and structuring investments, while continually adapting to market trends to drive lasting value." data-image="https://img.freepik.com/free-photo/close-up-businessman-with-digital-tablet_1098-549.jpg?uid=R203323317&ga=GA1.1.2056408330.1749463556&semt=ais_hybrid&w=740">Learn More</a>
-          </div>
-        </div>
-
-        <div class="card">
-          <img src="https://img.freepik.com/free-vector/flat-people-asking-questions_23-2148929673.jpg?uid=R203323317&ga=GA1.1.2056408330.1749463556&semt=ais_hybrid&w=740" alt="Leadership">
-          <div class="card-body">
-            <h3>Why Choose Us</h3>
-            <p>At SKY Bridge Incap Advisory LLP, we are committed to delivering excellence .......</p>
-            <a href="#" class="learn-btn" data-title="Why Choose Us" data-text="At SKY Bridge Incap Advisory LLP, we are committed to delivering excellence by providing high-quality services that exceed expectations and drive success. We prioritize trust by fostering strong, transparent relationships with our clients and partners. Our focus on value creation means we concentrate on strategies that generate long-term growth and sustainable results. Our dedicated team of professionals is equipped with the expertise, insight, and support necessary to navigate the financial landscape and help you achieve your objectives." data-image="https://img.freepik.com/free-photo/business-concept-with-team-close-up_23-2149151159.jpg?uid=R203323317&ga=GA1.1.2056408330.1749463556&semt=ais_hybrid&w=740">Learn More</a>
-          </div>
-        </div>
+    <!-- Item 1 -->
+    <div class="accordion-item" onclick="toggleAccordion(this)">
+      <div class="accordion-header">
+        <h3>How We Do?</h3>
+        <div class="icon">⌄</div>
       </div>
-
-      <div class="row two-cards">
-        <div class="card" style="transition-delay: 0.2s;">
-          <img src="https://img.freepik.com/free-vector/brainstorming-session_23-2147532938.jpg?uid=R203323317&ga=GA1.1.2056408330.1749463556&semt=ais_hybrid&w=740" alt="Strategy">
-          <div class="card-body">
-            <h3>Our Founder</h3>
-            <p>Devang Master </p>
-            <a href="#" class="learn-btn" data-title="Our Founder" data-text="Devang Master established SKY Bridge Incap
-Advisory LLP with a vision to transform the
-financial landscape by providing innovative
-solutions and exceptional services. His
-leadership steers the firm toward realizing this
-ambitious goal.A driving force behind our creativity and
-commitment to excellence, Devang
-emphasizes the importance of innovative
-thinking throughout the organization,
-encouraging teams to develop cutting-edge
-approaches to client challenges." data-image="https://img.freepik.com/free-vector/business-team-paper-collection_23-2147532462.jpg?uid=R203323317&ga=GA1.1.2056408330.1749463556&semt=ais_hybrid&w=740">Learn More</a>
-          </div>
-        </div>
-
-        <div class="card">
-          <img src="https://img.freepik.com/premium-vector/two-businessman-shaking-hands-by-agreement_61090-75.jpg?uid=R203323317&ga=GA1.1.2056408330.1749463556&semt=ais_hybrid&w=740" alt="Leadership">
-          <div class="card-body">
-            <h3>
-Our Commitment</h3>
-            <p>At SKY Bridge Incap, we are committed to delivering excellence through ......</p>
-            <a href="#" class="learn-btn" data-title="Our Commitment" data-text="At SKY Bridge Incap, we are committed to delivering excellence through innovation, expertise, and integrity. Our mission is to empower our clients with the tools and strategies needed to achieve their financial goals and make informed decisions" data-image="https://img.freepik.com/free-vector/strategic-consulting-concept-illustration_114360-8994.jpg?uid=R203323317&ga=GA1.1.2056408330.1749463556&semt=ais_hybrid&w=740">Learn More</a>
-          </div>
-        </div>
+      <div class="accordion-body">
+        <img src="https://st2.depositphotos.com/3928745/5613/i/380/depositphotos_56133427-stock-photo-businessman-hand-pushing-a-button.jpg" alt="How We Do">
+        <h4>We begin with strategy, end with success</h4>
+        <p>We deliver exceptional outcomes through a structured, client-focused approach. Our strategies are rooted in deep market understanding and innovative thinking. From ideation to execution, we manage investments and business structuring with precision and integrity.</p>
       </div>
     </div>
 
-    <!-- Modal Inside Section -->
-    <div id="infoModal" class="modal">
-      <div class="modal-content">
-        <span class="close-modal">&times;</span>
-        <img id="modal-img" src="" alt="Modal Image">
-        <h3 id="modal-title"></h3>
-        <p id="modal-text"></p>
+    <!-- Item 2 -->
+    <div class="accordion-item" onclick="toggleAccordion(this)">
+      <div class="accordion-header">
+        <h3>Why Choose Us?</h3>
+        <div class="icon">⌄</div>
+      </div>
+      <div class="accordion-body">
+        <img src="https://st2.depositphotos.com/3889193/8014/i/380/depositphotos_80147336-stock-photo-business-teamwork.jpg" alt="Why Choose Us">
+        <h4>We build trust, not just solutions</h4>
+        <p>With years of experience, we offer high-quality services that go beyond expectations. Our advisory model is based on collaboration, value creation, and long-term success for clients across sectors. We’re not just advisors — we’re your strategic partners.</p>
       </div>
     </div>
 
+    <!-- Item 3 -->
+    <div class="accordion-item" onclick="toggleAccordion(this)">
+      <div class="accordion-header">
+        <h3>Our Founder</h3>
+        <div class="icon">⌄</div>
+      </div>
+      <div class="accordion-body">
+        <img src="https://static8.depositphotos.com/1000423/1027/i/380/depositphotos_10273001-stock-photo-man-working-with-vurtial-screens.jpg" alt="Founder">
+        <h4>Devang Master, Visionary & Leader</h4>
+        <p>Devang Master founded SKY Bridge Incap Advisory LLP with the vision to revolutionize financial advisory services. With a strong foundation in finance and leadership, he drives innovation, inspires excellence, and shapes our firm’s future.</p>
+      </div>
+    </div>
+
+    <!-- Item 4 -->
+    <div class="accordion-item" onclick="toggleAccordion(this)">
+      <div class="accordion-header">
+        <h3>Our Commitment</h3>
+        <div class="icon">⌄</div>
+      </div>
+      <div class="accordion-body">
+        <img src="https://st2.depositphotos.com/1594308/11248/i/380/depositphotos_112485144-stock-photo-business-people-discussing-plans.jpg" alt="Commitment">
+        <h4>Integrity. Innovation. Impact.</h4>
+        <p>We’re committed to helping clients unlock their potential through actionable insights, ethical practices, and smart strategy. Our team brings clarity and confidence to every transaction, delivering measurable results that matter.</p>
+      </div>
+    </div>
   </div>
 
-  <!-- Animation Script -->
   <script>
-    const cards = document.querySelectorAll('.card');
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('appear');
-        }
+    function toggleAccordion(item) {
+      const items = document.querySelectorAll('.accordion-item');
+      items.forEach(i => {
+        if (i !== item) i.classList.remove('active');
       });
-    }, {
-      threshold: 0.2
-    });
-    cards.forEach(card => observer.observe(card));
-  </script>
-
-  <!-- Modal Script -->
-  <script>
-  const modal = document.getElementById('infoModal');
-  const modalImg = document.getElementById('modal-img');
-  const modalTitle = document.getElementById('modal-title');
-  const modalText = document.getElementById('modal-text');
-  const closeModal = document.querySelector('.close-modal');
-
-  document.querySelectorAll('.learn-btn').forEach(btn => {
-    btn.addEventListener('click', function (e) {
-      e.preventDefault();
-
-      const isMobile = window.innerWidth <= 768;
-      const card = this.closest('.card');
-
-      modalImg.src = this.dataset.image;
-      modalTitle.textContent = this.dataset.title;
-      modalText.textContent = this.dataset.text;
-
-      // If mobile, position modal below card
-      if (isMobile) {
-        card.insertAdjacentElement('afterend', modal);
-        modal.style.position = "absolute";
-        modal.style.display = 'flex';
-        modal.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      } else {
-        // Desktop default center modal
-        modal.style.position = "fixed";
-        modal.style.display = 'flex';
-        card.scrollIntoView({ behavior: 'smooth', block: 'center' });
-      }
-    });
-  });
-
-  closeModal.onclick = () => modal.style.display = 'none';
-
-  window.onclick = (event) => {
-    if (event.target == modal && window.innerWidth > 768) {
-      modal.style.display = 'none';
+      item.classList.toggle('active');
     }
-  }
-</script>
+  </script>
+</section>
 
 </section>
 <br></br>
 <br></br>
 
 <section>
+<section>
   <style>
     body {
       margin: 0;
-      font-family: mml-title, sans-serif;
-      background-color: #f9f9f9;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to bottom right, #ecf0f3, #d9f4ff);
     }
 
     .section-wrapper {
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 40px;
-      padding: 40px 20px;
+      gap: 80px;
+      padding: 100px 20px;
     }
 
     .info-card {
       display: flex;
       max-width: 1200px;
-      height:50vh;
-      background-color: white;
-      border-radius: 10px;
+      height: 500px;
+      background: white;
+      border-radius: 20px;
       overflow: hidden;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-      transition: transform 0.7s ease, box-shadow 0.7s ease;
-      
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+      transition: transform 0.5s ease, box-shadow 0.5s ease;
+      opacity: 0;
+      transform: translateY(50px) rotateX(30deg);
+      animation: rollIn 1s forwards ease;
     }
+
+    .section-wrapper .info-card:nth-child(1) {
+      animation-delay: 0.2s;
+    }
+
+    .section-wrapper .info-card:nth-child(2) {
+      animation-delay: 0.4s;
+    }
+
+    .section-wrapper .info-card:nth-child(3) {
+      animation-delay: 0.6s;
+    }
+
+    .section-wrapper .info-card:nth-child(4) {
+      animation-delay: 0.8s;
+    }
+
+    @keyframes rollIn {
+      to {
+        opacity: 1;
+        transform: translateY(0) rotateX(0deg);
+      }
+    }
+
     .info-card.reverse {
-  flex-direction: row-reverse;
-}
-
-
-    .info-card:hover {
-      transform: scale(1.02);
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+      flex-direction: row-reverse;
     }
 
     .info-text {
       flex: 1;
-      background-color: #011f3d;
+      background: #011f3d;
       color: #2efcff;
       padding: 60px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      border-radius: 0 20px 20px 0;
+    }
+
+    .info-card.reverse .info-text {
+      border-radius: 20px 0 0 20px;
     }
 
     .info-text h2 {
-      margin-top: 0;
-      font-size:30px;
+      font-size: 32px;
+      margin-bottom: 20px;
+      position: relative;
+    }
+
+    .info-text h2::after {
+      content: '';
+      width: 60px;
+      height: 3px;
+      background: #2efcff;
+      position: absolute;
+      bottom: -10px;
+      left: 0;
     }
 
     .info-text p {
-      font-size: 16px;
-      line-height: 1.8;
+      font-size: 17px;
+      line-height: 1.75;
     }
 
-    .info-text button {
-      margin-top: 15px;
-      padding: 8px 16px;
+    .info-text .glass-btn {
+      margin-top: 30px;
+      background: rgba(46, 252, 255, 0.1);
+      backdrop-filter: blur(10px);
       border: 1px solid #2efcff;
-      background: transparent;
-      color: white;
+      color: #2efcff;
+      padding: 10px 24px;
+      border-radius: 30px;
+      font-weight: bold;
       cursor: pointer;
-      border-radius: 5px;
+      transition: all 0.4s ease;
+      align-self: start;
+    }
+
+    .info-text .glass-btn:hover {
+      background: #2efcff;
+      color: #011f3d;
     }
 
     .info-image {
       flex: 1;
+      overflow: hidden;
+      position: relative;
     }
 
     .info-image img {
       width: 100%;
       height: 100%;
       object-fit: cover;
+      transition: transform 1s ease;
+    }
+
+    .info-card:hover .info-image img {
+      transform: scale(1.08) rotate(1deg);
     }
 
     @media (max-width: 768px) {
-      .info-card {
+      .info-card,
+      .info-card.reverse {
         flex-direction: column;
       }
 
       .info-image img {
-        height: 250px;
+             border-radius: 0px 0px 0 0; 
+        height: 190px;
+    }
+
+
+      .info-text {
+        border-radius: 0 0 20px 20px !important;
+        padding: 30px;
       }
     }
   </style>
-</head>
-<body>
 
   <div class="section-wrapper">
 
     <!-- Card 1 -->
     <div class="info-card">
       <div class="info-text">
-        <h2> Strategic Growth Partnerships</h2>
-        <br></br>
-        <p>We don’t just invest — we collaborate. SKY Bridge forms deep-rooted partnerships with visionary founders and institutions, aligning with their ambitions to scale sustainably. Our team becomes an extension of yours, providing strategic insights, mentorship, and execution support every step of the way.
-</p>
-       <!--<button>Read More</button>-->
+        <h2>Strategic Growth Partnerships</h2>
+        <p>We don’t just invest — we collaborate. SKY Bridge forms deep-rooted partnerships with visionary founders and institutions, aligning with their ambitions to scale sustainably. Our team becomes an extension of yours, providing strategic insights, mentorship, and execution support every step of the way.</p>
+      
       </div>
       <div class="info-image">
-        <img src="images/sports tech.jpg" alt="Business People">
+        <img src="https://www.gannett-cdn.com/media/2016/06/02/USATODAY/USATODAY/636004243557322216-ThinkstockPhotos-499155570.jpg" alt="Business People">
       </div>
     </div>
 
@@ -1042,30 +920,30 @@ Our Commitment</h3>
     <div class="info-card reverse">
       <div class="info-text">
         <h2>Innovative Financial Solutions</h2>
-          <br></br>
         <p>In today’s fast-evolving market, cookie-cutter models don’t work. We specialize in crafting bespoke financial strategies tailored to your unique goals. From capital structuring to expansion planning, we design solutions that fuel transformation and ensure long-term value creation.</p>
-          <!--<button>Read More</button>-->
+      
       </div>
       <div class="info-image">
-        <img src="https://www.citigroup.com/rcs/v1/siteIds/citigpa/asset/67fd4c25dbbcaf067987eb1d.jpg" alt="Strategy">
+        <img src="https://media.licdn.com/dms/image/v2/D5612AQH_fzSGu1K9UA/article-cover_image-shrink_720_1280/article-cover_image-shrink_720_1280/0/1720592422707?e=2147483647&v=beta&t=2IB35OZYwmGcM8GzKhoq0LruUvt-BKrOlk_1EnuMnY8" alt="Strategy">
       </div>
     </div>
 
     <!-- Card 3 -->
-    <div class="info-card reverse">
+    <div class="info-card">
       <div class="info-text">
-        <h2> Vision-Aligned Support</h2>
-          <br></br>
-        <p>At SKY Bridge, we back bold ideas with more than just capital. Our commitment lies in unlocking potential through strategic foresight, operational guidance, and a relentless focus on impact. We help you turn opportunities into industry benchmarks — shaping the future, together.
-        </p>
-         <!--<button>Read More</button>-->
+        <h2>Vision-Aligned Support</h2>
+        <p>At SKY Bridge, we back bold ideas with more than just capital. Our commitment lies in unlocking potential through strategic foresight, operational guidance, and a relentless focus on impact. We help you turn opportunities into industry benchmarks — shaping the future, together.</p>
+       
       </div>
       <div class="info-image">
-        <img src="https://www.citigroup.com/rcs/v1/siteIds/citigpa/asset/63acb69f9bf1d21809b0e8c2.jpg" alt="Client Success">
+        <img src="https://digitaldeepak.com/content/images/wp-content/uploads/2018/12/find-a-business-partner.png" alt="Client Success">
       </div>
     </div>
 
+    
   </div>
+</section>
+
 </section>
 
 <!--5th section -->
