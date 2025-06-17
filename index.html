@@ -2346,6 +2346,7 @@ padding-top:1px;
       height:55vh;
       width:100px;
     }
+   
   </style>
  <section class="services-section13" id="8-services">
   <div class="services-title13">OUR SERVICES</div>
@@ -2472,6 +2473,16 @@ document.querySelectorAll('.service-card13').forEach(card => {
   });
 });
 </script>
+ <script>
+document.querySelectorAll('.service-card13').forEach(card => {
+  card.addEventListener('mousemove', (e) => {
+    const rect = card.getBoundingClientRect();
+    card.style.setProperty('--x', `${e.clientX - rect.left}px`);
+    card.style.setProperty('--y', `${e.clientY - rect.top}px`);
+  });
+});
+</script>
+
 
 
   <script>
